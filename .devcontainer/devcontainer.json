@@ -1,10 +1,24 @@
 {
   "name": "helpers4 (orchestrator)",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
-  // Mount the parent folder so all sibling helpers4 repos are available inside the container.
-  // Open .dev/helpers4.code-workspace from within the container to get the multi-root view.
-  "workspaceFolder": "/workspaces/helpers4",
-  "workspaceMount": "source=${localWorkspaceFolder}/..,target=/workspaces/helpers4,type=bind,consistency=cached",
+  // This devcontainer lives inside the .dev repo. Sibling helpers4 repos
+  // are surfaced through relative symlinks under .dev/.repos/<name> (run
+  // `./scripts/setup-repos.sh` once to create them).
+  //
+  // Layout inside the container mirrors the host so the symlinks resolve:
+  //   /workspaces/.dev          ← bind mount of the .dev repo
+  //   /workspaces/<name>        ← bind mount of each sibling repo
+  // The symlink ../../<name> from .dev/.repos/<name> therefore points to
+  // /workspaces/<name> inside the container and to the real sibling on host.
+  "workspaceFolder": "/workspaces/.dev",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/.dev,type=bind,consistency=cached",
+  "mounts": [
+    "source=${localWorkspaceFolder}/../.github,target=/workspaces/.github,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/../action,target=/workspaces/action,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/../devcontainer,target=/workspaces/devcontainer,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/../typescript,target=/workspaces/typescript,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/../website,target=/workspaces/website,type=bind,consistency=cached"
+  ],
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
@@ -76,5 +90,5 @@
     }
   },
   "remoteUser": "node",
-  "postCreateCommand": "echo 'helpers4 orchestrator container ready. Open .dev/helpers4.code-workspace to load every repo.'"
+  "postCreateCommand": "bash /workspaces/.dev/scripts/setup-repos.sh && echo 'helpers4 orchestrator ready — open helpers4.code-workspace to load every repo.'"
 }

@@ -6,23 +6,23 @@
 		},
 		{
 			"name": "📦 .github",
-			"path": "../.github"
+			"path": "./.repos/.github"
 		},
 		{
 			"name": "⚙️ action",
-			"path": "../action"
+			"path": "./.repos/action"
 		},
 		{
 			"name": "🛠️ devcontainer",
-			"path": "../devcontainer"
+			"path": "./.repos/devcontainer"
 		},
 		{
 			"name": "📦 typescript",
-			"path": "../typescript"
+			"path": "./.repos/typescript"
 		},
 		{
 			"name": "🌐 website",
-			"path": "../website"
+			"path": "./.repos/website"
 		}
 	],
 	"settings": {

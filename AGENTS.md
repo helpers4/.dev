@@ -93,8 +93,16 @@ The `psi-header` VS Code extension is configured in the workspace to inject thes
 .dev/
 ├── .devcontainer/
 │   └── devcontainer.json       # Cross-repo dev environment
+├── .repos/                     # Symlinks to sibling helpers4 repos (gitignored)
+│   ├── .github  -> ../../.github
+│   ├── action   -> ../../action
+│   ├── devcontainer -> ../../devcontainer
+│   ├── typescript -> ../../typescript
+│   └── website  -> ../../website
 ├── .vscode/
 │   └── settings.json           # Repo-specific overrides (scopes)
+├── scripts/
+│   └── setup-repos.sh          # Creates .repos/ symlinks (idempotent)
 ├── helpers4.code-workspace     # Multi-root workspace + shared settings
 ├── AGENTS.md                   # This file (canonical org-wide rules)
 ├── README.md

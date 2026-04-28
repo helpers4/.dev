@@ -50,17 +50,43 @@ gh repo clone helpers4/typescript
 gh repo clone helpers4/website
 ```
 
-### 2. Open the multi-root workspace
+### 2. Surface the siblings inside `.dev/`
+
+The multi-root workspace and the devcontainer reference every sibling repo through symlinks under `.dev/.repos/`. Create them once:
+
+```bash
+./.dev/scripts/setup-repos.sh
+```
+
+Result:
+
+```
+.dev/
+├── .repos/
+│   ├── .github       -> ../../.github
+│   ├── action        -> ../../action
+│   ├── devcontainer  -> ../../devcontainer
+│   ├── typescript    -> ../../typescript
+│   └── website       -> ../../website
+├── .devcontainer/
+├── .vscode/
+├── helpers4.code-workspace
+└── ...
+```
+
+The links are **relative** (`../../<name>`) so they resolve identically on the host and inside the container.
+
+### 3. Open the multi-root workspace
 
 ```bash
 code .dev/helpers4.code-workspace
 ```
 
-VS Code will display all six folders side by side with consistent settings (commit message format, license headers, scopes, agents).
+VS Code displays all six folders side by side with consistent settings (commit message format, license headers, scopes, agents).
 
-### 3. (Optional) Use the unified DevContainer
+### 4. (Optional) Use the unified DevContainer
 
-When prompted, *Reopen in Container* — or run **Dev Containers: Reopen in Container** from the command palette. The container mounts the entire `helpers4/` parent folder, so every repo is available under `/workspaces/helpers4/`.
+When prompted, *Reopen in Container* — or run **Dev Containers: Reopen in Container** from the command palette. The container bind-mounts `.dev` at `/workspaces/.dev` and each sibling at `/workspaces/<name>`, so the symlinks under `.repos/` keep working as-is. The `postCreateCommand` re-runs `setup-repos.sh` to be safe.
 
 ## What Lives Here
 
@@ -68,6 +94,7 @@ When prompted, *Reopen in Container* — or run **Dev Containers: Reopen in Cont
 |------|---------|
 | [`helpers4.code-workspace`](./helpers4.code-workspace) | VS Code multi-root workspace + shared settings |
 | [`.devcontainer/devcontainer.json`](./.devcontainer/devcontainer.json) | Cross-repo dev environment (Node, pnpm, gh, helpers4 features) |
+| [`scripts/setup-repos.sh`](./scripts/setup-repos.sh) | Creates the `.repos/` symlinks to every sibling helpers4 repo |
 | [`AGENTS.md`](./AGENTS.md) | Canonical org-wide agent instructions |
 | [`.vscode/settings.json`](./.vscode/settings.json) | Settings applied when opening `.dev/` standalone |
 | [`LICENSE`](./LICENSE) | LGPL-3.0-or-later |

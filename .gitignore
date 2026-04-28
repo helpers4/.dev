@@ -2,6 +2,9 @@
 /.history
 .vscode/*.log
 
+# Sibling repos surfaced via symlinks (created by scripts/setup-repos.sh)
+/.repos
+
 # OS
 .DS_Store
 Thumbs.db
