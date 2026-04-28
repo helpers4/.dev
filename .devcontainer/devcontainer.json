@@ -1,0 +1,80 @@
+{
+  "name": "helpers4 (orchestrator)",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
+  // Mount the parent folder so all sibling helpers4 repos are available inside the container.
+  // Open .dev/helpers4.code-workspace from within the container to get the multi-root view.
+  "workspaceFolder": "/workspaces/helpers4",
+  "workspaceMount": "source=${localWorkspaceFolder}/..,target=/workspaces/helpers4,type=bind,consistency=cached",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {},
+    "ghcr.io/helpers4/devcontainer/shell-history-per-project:1": {},
+    "ghcr.io/helpers4/devcontainer/git-absorb:1": {},
+    "ghcr.io/helpers4/devcontainer/essential-dev:1": {},
+    "ghcr.io/helpers4/devcontainer/github-dev:1": {},
+    "ghcr.io/helpers4/devcontainer/typescript-dev:1": {},
+    "ghcr.io/helpers4/devcontainer/vite-plus:1": {},
+    "ghcr.io/helpers4/devcontainer/peon-ping:1": {
+      "packs": "peasant_fr,peon_fr,warcraft-peon"
+    },
+    "ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store:1": {},
+    "ghcr.io/helpers4/devcontainer/package-auto-install:1": {},
+    "ghcr.io/helpers4/devcontainer/auto-header:1": {
+      "projectName": "helpers4",
+      "license": "LGPL-3.0-or-later"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "davidanson.vscode-markdownlint",
+        "editorconfig.editorconfig",
+        "github.copilot",
+        "github.copilot-chat",
+        "github.vscode-github-actions",
+        "github.vscode-pull-request-github",
+        "ms-azuretools.vscode-containers",
+        "oxc.oxc-vscode",
+        "psioniq.psi-header",
+        "redhat.vscode-yaml",
+        "streetsidesoftware.code-spell-checker",
+        "timonwong.shellcheck",
+        "vivaxy.vscode-conventional-commits"
+      ]
+    }
+  },
+  // Forwarded ports cover every sibling project's dev server.
+  // typescript: 3000 / website landing: 3000 / docusaurus: 3001-3003 / angular: 4200
+  "forwardPorts": [
+    3000,
+    3001,
+    3002,
+    3003,
+    4200
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "TS / landing dev server",
+      "onAutoForward": "notify"
+    },
+    "3001": {
+      "label": "Docusaurus — typescript",
+      "onAutoForward": "silent"
+    },
+    "3002": {
+      "label": "Docusaurus — devcontainer",
+      "onAutoForward": "silent"
+    },
+    "3003": {
+      "label": "Docusaurus — action",
+      "onAutoForward": "silent"
+    },
+    "4200": {
+      "label": "Angular dev server",
+      "onAutoForward": "silent"
+    }
+  },
+  "remoteUser": "node",
+  "postCreateCommand": "echo 'helpers4 orchestrator container ready. Open .dev/helpers4.code-workspace to load every repo.'"
+}
