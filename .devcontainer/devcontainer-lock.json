@@ -1,0 +1,69 @@
+{
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "version": "1.9.1",
+      "resolved": "ghcr.io/devcontainers/features/docker-outside-of-docker@sha256:dc89605f01ff2f24252c61f7c8ba2a58ccdbc14f2ebf87a7952d9e2b89834850",
+      "integrity": "sha256:dc89605f01ff2f24252c61f7c8ba2a58ccdbc14f2ebf87a7952d9e2b89834850"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "1.1.0",
+      "resolved": "ghcr.io/devcontainers/features/github-cli@sha256:d22f50b70ed75339b4eed1ba9ecde3a1791f90e88d37936517e3bace0bbad671",
+      "integrity": "sha256:d22f50b70ed75339b4eed1ba9ecde3a1791f90e88d37936517e3bace0bbad671"
+    },
+    "ghcr.io/helpers4/devcontainer/auto-header:1": {
+      "version": "1.0.1",
+      "resolved": "ghcr.io/helpers4/devcontainer/auto-header@sha256:1eb224ab20f5c6a9139abc451603818200c5b9273eb9034bcd5b291f99948598",
+      "integrity": "sha256:1eb224ab20f5c6a9139abc451603818200c5b9273eb9034bcd5b291f99948598"
+    },
+    "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/helpers4/devcontainer/dotfiles-sync@sha256:0ee57346280e310dc8f7a76eee408783c07b2cb8b8c3624b44b7650fbb86ccb2",
+      "integrity": "sha256:0ee57346280e310dc8f7a76eee408783c07b2cb8b8c3624b44b7650fbb86ccb2"
+    },
+    "ghcr.io/helpers4/devcontainer/essential-dev:1": {
+      "version": "1.0.3",
+      "resolved": "ghcr.io/helpers4/devcontainer/essential-dev@sha256:c3f34678466cf106215d3f55ecb2517f212241c1898175d410189ad63d9ec63c",
+      "integrity": "sha256:c3f34678466cf106215d3f55ecb2517f212241c1898175d410189ad63d9ec63c"
+    },
+    "ghcr.io/helpers4/devcontainer/git-absorb:1": {
+      "version": "1.0.2",
+      "resolved": "ghcr.io/helpers4/devcontainer/git-absorb@sha256:1844bca7cb10728ba9526403cb8d6962cd7caf5ea12d2e525a4b0bca50ee2771",
+      "integrity": "sha256:1844bca7cb10728ba9526403cb8d6962cd7caf5ea12d2e525a4b0bca50ee2771"
+    },
+    "ghcr.io/helpers4/devcontainer/github-dev:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/helpers4/devcontainer/github-dev@sha256:34211f4a34a634b54b88adb83bccb5df04bc34f33125a7dcb6449daeae72a419",
+      "integrity": "sha256:34211f4a34a634b54b88adb83bccb5df04bc34f33125a7dcb6449daeae72a419"
+    },
+    "ghcr.io/helpers4/devcontainer/package-auto-install:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/helpers4/devcontainer/package-auto-install@sha256:77e432d6eb9fecc68d3286b986df746cb3b4755786d7532fdb6e45ed199a4955",
+      "integrity": "sha256:77e432d6eb9fecc68d3286b986df746cb3b4755786d7532fdb6e45ed199a4955"
+    },
+    "ghcr.io/helpers4/devcontainer/peon-ping:1": {
+      "version": "1.0.1",
+      "resolved": "ghcr.io/helpers4/devcontainer/peon-ping@sha256:6f23e0e8efa7805fb15249daeff2d85959afb63bfc6ac457c015a04f9e844de1",
+      "integrity": "sha256:6f23e0e8efa7805fb15249daeff2d85959afb63bfc6ac457c015a04f9e844de1"
+    },
+    "ghcr.io/helpers4/devcontainer/shell-history-per-project:1": {
+      "version": "1.0.2",
+      "resolved": "ghcr.io/helpers4/devcontainer/shell-history-per-project@sha256:a921a4ec0a7472a0d80f1352aa93e118235dfc1aea73dc906a5b3606f964f016",
+      "integrity": "sha256:a921a4ec0a7472a0d80f1352aa93e118235dfc1aea73dc906a5b3606f964f016"
+    },
+    "ghcr.io/helpers4/devcontainer/typescript-dev:1": {
+      "version": "1.0.5",
+      "resolved": "ghcr.io/helpers4/devcontainer/typescript-dev@sha256:f24d1147e03bfd2c5fd45887a5316915d2ba37617ea16f9c2bbfbd51d35b2cb7",
+      "integrity": "sha256:f24d1147e03bfd2c5fd45887a5316915d2ba37617ea16f9c2bbfbd51d35b2cb7"
+    },
+    "ghcr.io/helpers4/devcontainer/vite-plus:1": {
+      "version": "1.0.2",
+      "resolved": "ghcr.io/helpers4/devcontainer/vite-plus@sha256:3aa7727d0413ba6a341fd97fdc7d528f66876055bfb2e006769fb28a7df84ee6",
+      "integrity": "sha256:3aa7727d0413ba6a341fd97fdc7d528f66876055bfb2e006769fb28a7df84ee6"
+    },
+    "ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store:1": {
+      "version": "1.0.2",
+      "resolved": "ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store@sha256:32f78bc711aecc2b1479143a4412461b4075c61f0d4776e74265890099a3c7f6",
+      "integrity": "sha256:32f78bc711aecc2b1479143a4412461b4075c61f0d4776e74265890099a3c7f6"
+    }
+  }
+}

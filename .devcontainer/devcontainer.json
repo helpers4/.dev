@@ -21,7 +21,11 @@
   ],
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    // moby:false → use upstream docker-ce CLI; required since the base image
+    // moved to Debian trixie where moby-cli is no longer packaged.
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "moby": false
+    },
     "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {},
     "ghcr.io/helpers4/devcontainer/shell-history-per-project:1": {},
     "ghcr.io/helpers4/devcontainer/git-absorb:1": {},
