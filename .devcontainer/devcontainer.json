@@ -1,5 +1,5 @@
 {
-  "name": "helpers4 (orchestrator)",
+  "name": "helpers4 🎼",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
   // This devcontainer lives inside the .dev repo. Sibling helpers4 repos
   // are surfaced through relative symlinks under .dev/.repos/<name> (run
@@ -63,13 +63,14 @@
     }
   },
   // Forwarded ports cover every sibling project's dev server.
-  // typescript: 3000 / website landing: 3000 / docusaurus: 3001-3003 / angular: 4200
+  // typescript: 3000 / website landing: 3000 / docusaurus: 3001-3003 / vite fallback: 5173 / angular: 4200
   "forwardPorts": [
     3000,
     3001,
     3002,
     3003,
-    4200
+    4200,
+    5173
   ],
   "portsAttributes": {
     "3000": {
@@ -90,6 +91,10 @@
     },
     "4200": {
       "label": "Angular dev server",
+      "onAutoForward": "silent"
+    },
+    "5173": {
+      "label": "Vite dev server (fallback)",
       "onAutoForward": "silent"
     }
   },
