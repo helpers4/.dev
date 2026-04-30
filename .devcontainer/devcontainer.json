@@ -1,15 +1,15 @@
 {
   "name": "helpers4 🎼",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
-  // This devcontainer lives inside the .dev repo. Sibling helpers4 repos
-  // are surfaced through relative symlinks under .dev/.repos/<name> (run
-  // `./scripts/setup-repos.sh` once to create them).
+  // Orchestrator devcontainer for the helpers4 organization.
   //
-  // Layout inside the container mirrors the host so the symlinks resolve:
-  //   /workspaces/.dev          ← bind mount of the .dev repo
-  //   /workspaces/<name>        ← bind mount of each sibling repo
-  // The symlink ../../<name> from .dev/.repos/<name> therefore points to
-  // /workspaces/<name> inside the container and to the real sibling on host.
+  // Bind-mounts every sibling helpers4 repo from the host (../<name>) into
+  // /workspaces/<name>. The multi-root workspace (helpers4.code-workspace)
+  // references each sibling via "../<name>", which resolves to the bind
+  // mount inside the container and to the real sibling folder on host.
+  //
+  // Falls back to `git clone` inside the container if a sibling repo is
+  // missing on host (e.g. GitHub Codespaces) — see setup-container.sh.
   "workspaceFolder": "/workspaces/.dev",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/.dev,type=bind,consistency=cached",
   "mounts": [
@@ -19,6 +19,9 @@
     "source=${localWorkspaceFolder}/../typescript,target=/workspaces/typescript,type=bind,consistency=cached",
     "source=${localWorkspaceFolder}/../website,target=/workspaces/website,type=bind,consistency=cached"
   ],
+  "containerEnv": {
+    "HELPERS4_REPOS": ".github action devcontainer typescript website"
+  },
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {},
     // moby:false → use upstream docker-ce CLI; required since the base image
@@ -99,5 +102,5 @@
     }
   },
   "remoteUser": "node",
-  "postCreateCommand": "bash /workspaces/.dev/scripts/setup-repos.sh && echo 'helpers4 orchestrator ready — open helpers4.code-workspace to load every repo.'"
+  "postCreateCommand": "bash .devcontainer/setup-container.sh"
 }

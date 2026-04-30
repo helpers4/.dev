@@ -6,23 +6,23 @@
 		},
 		{
 			"name": "📦 .github",
-			"path": "./.repos/.github"
+			"path": "../.github"
 		},
 		{
-			"name": "⚙️ action",
-			"path": "./.repos/action"
+			"name": "action",
+			"path": "../action"
 		},
 		{
-			"name": "🛠️ devcontainer",
-			"path": "./.repos/devcontainer"
+			"name": "devcontainer",
+			"path": "../devcontainer"
 		},
 		{
-			"name": "📦 typescript",
-			"path": "./.repos/typescript"
+			"name": "typescript",
+			"path": "../typescript"
 		},
 		{
-			"name": "🌐 website",
-			"path": "./.repos/website"
+			"name": "website",
+			"path": "../website"
 		}
 	],
 	"settings": {

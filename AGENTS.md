@@ -92,22 +92,21 @@ The `psi-header` VS Code extension is configured in the workspace to inject thes
 ```
 .dev/
 ├── .devcontainer/
-│   └── devcontainer.json       # Cross-repo dev environment
-├── .repos/                     # Symlinks to sibling helpers4 repos (gitignored)
-│   ├── .github  -> ../../.github
-│   ├── action   -> ../../action
-│   ├── devcontainer -> ../../devcontainer
-│   ├── typescript -> ../../typescript
-│   └── website  -> ../../website
+│   ├── devcontainer.json       # Cross-repo dev environment
+│   └── setup-container.sh      # postCreateCommand: clone-fallback + install
 ├── .vscode/
 │   └── settings.json           # Repo-specific overrides (scopes)
 ├── scripts/
-│   └── setup-repos.sh          # Creates .repos/ symlinks (idempotent)
+│   ├── run-each.mjs            # Run a pnpm script in every sibling repo
+│   └── git-each.mjs            # Run a git command in every sibling repo
 ├── helpers4.code-workspace     # Multi-root workspace + shared settings
+├── package.json                # Cross-repo orchestration scripts
 ├── AGENTS.md                   # This file (canonical org-wide rules)
 ├── README.md
 └── LICENSE                     # LGPL-3.0
 ```
+
+Sibling repos (`.github`, `action`, `devcontainer`, `typescript`, `website`) live **next to** this folder on the host. The devcontainer bind-mounts each of them at `/workspaces/<name>` so the multi-root workspace sees them via `../<name>`.
 
 ### What NOT to do here
 

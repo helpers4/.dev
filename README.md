@@ -50,43 +50,40 @@ gh repo clone helpers4/typescript
 gh repo clone helpers4/website
 ```
 
-### 2. Surface the siblings inside `.dev/`
-
-The multi-root workspace and the devcontainer reference every sibling repo through symlinks under `.dev/.repos/`. Create them once:
-
-```bash
-./.dev/scripts/setup-repos.sh
-```
-
-Result:
-
-```
-.dev/
-├── .repos/
-│   ├── .github       -> ../../.github
-│   ├── action        -> ../../action
-│   ├── devcontainer  -> ../../devcontainer
-│   ├── typescript    -> ../../typescript
-│   └── website       -> ../../website
-├── .devcontainer/
-├── .vscode/
-├── helpers4.code-workspace
-└── ...
-```
-
-The links are **relative** (`../../<name>`) so they resolve identically on the host and inside the container.
-
-### 3. Open the multi-root workspace
+### 2. Open the multi-root workspace
 
 ```bash
 code .dev/helpers4.code-workspace
 ```
 
-VS Code displays all six folders side by side with consistent settings (commit message format, license headers, scopes, agents).
+VS Code displays all six folders side by side with consistent settings (commit message format, license headers, scopes, agents). The workspace references siblings via `../<name>` — they live next to `.dev/` on the host, no symlinks needed.
 
-### 4. (Optional) Use the unified DevContainer
+### 3. (Optional) Reopen in DevContainer
 
-When prompted, *Reopen in Container* — or run **Dev Containers: Reopen in Container** from the command palette. The container bind-mounts `.dev` at `/workspaces/.dev` and each sibling at `/workspaces/<name>`, so the symlinks under `.repos/` keep working as-is. The `postCreateCommand` re-runs `setup-repos.sh` to be safe.
+When prompted, *Reopen in Container* — or run **Dev Containers: Reopen in Container** from the command palette. The container:
+
+- bind-mounts `.dev/` at `/workspaces/.dev`
+- bind-mounts each sibling repo at `/workspaces/<name>` so the same `../<name>` path used by the workspace resolves correctly inside the container
+- runs [`setup-container.sh`](./.devcontainer/setup-container.sh) on first start to:
+  - clone any sibling repo missing on the host (Codespaces fallback)
+  - run `pnpm install` in every sibling that has a `package.json`
+
+### 4. Cross-repo commands
+
+From `.dev/`, run any of:
+
+```bash
+pnpm run install:all   # pnpm install in every sibling
+pnpm run build:all     # pnpm run build in every sibling that defines it
+pnpm run test:all
+pnpm run lint:all
+pnpm run status:all    # git status -sb in every repo
+pnpm run fetch:all     # git fetch --all --prune
+pnpm run pull:all      # git pull --rebase --autostash
+pnpm run branch:all    # show current branch
+```
+
+Powered by [`scripts/run-each.mjs`](./scripts/run-each.mjs) and [`scripts/git-each.mjs`](./scripts/git-each.mjs).
 
 ## What Lives Here
 
@@ -94,7 +91,10 @@ When prompted, *Reopen in Container* — or run **Dev Containers: Reopen in Cont
 |------|---------|
 | [`helpers4.code-workspace`](./helpers4.code-workspace) | VS Code multi-root workspace + shared settings |
 | [`.devcontainer/devcontainer.json`](./.devcontainer/devcontainer.json) | Cross-repo dev environment (Node, pnpm, gh, helpers4 features) |
-| [`scripts/setup-repos.sh`](./scripts/setup-repos.sh) | Creates the `.repos/` symlinks to every sibling helpers4 repo |
+| [`.devcontainer/setup-container.sh`](./.devcontainer/setup-container.sh) | postCreateCommand — clone-fallback + pnpm install |
+| [`scripts/run-each.mjs`](./scripts/run-each.mjs) | Run a pnpm script in every sibling repo |
+| [`scripts/git-each.mjs`](./scripts/git-each.mjs) | Run a git command in every sibling repo |
+| [`package.json`](./package.json) | Cross-repo orchestration scripts (`*:all`) |
 | [`AGENTS.md`](./AGENTS.md) | Canonical org-wide agent instructions |
 | [`.vscode/settings.json`](./.vscode/settings.json) | Settings applied when opening `.dev/` standalone |
 | [`LICENSE`](./LICENSE) | LGPL-3.0-or-later |
