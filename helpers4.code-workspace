@@ -26,86 +26,6 @@
 		}
 	],
 	"settings": {
-		"//": "Workspace-level shared settings — inherited by every folder. Per-repo .vscode/settings.json may override scopes and language-specific bits.",
-		"editor.insertSpaces": true,
-		"editor.detectIndentation": true,
-		"files.eol": "\n",
-		"files.insertFinalNewline": true,
-		"files.trimTrailingWhitespace": true,
-		"psi-header.config": {
-			"author": "baxyz",
-			"authorEmail": "baxy@etik.com",
-			"license": "LGPL-3.0-or-later",
-			"company": "",
-			"copyrightHolder": "baxyz",
-			"forceToTop": true
-		},
-		"psi-header.templates": [
-			{
-				"language": "typescript",
-				"template": [
-					"This file is part of helpers4.",
-					"Copyright (C) <<yeartoyear>> <<copyrightHolder>>",
-					"SPDX-License-Identifier: <<spdxid>>"
-				]
-			},
-			{
-				"language": "javascript",
-				"template": [
-					"This file is part of helpers4.",
-					"Copyright (C) <<yeartoyear>> <<copyrightHolder>>",
-					"SPDX-License-Identifier: <<spdxid>>"
-				]
-			},
-			{
-				"language": "shellscript",
-				"template": [
-					"This file is part of helpers4.",
-					"Copyright (C) <<yeartoyear>> <<copyrightHolder>>",
-					"SPDX-License-Identifier: <<spdxid>>"
-				]
-			}
-		],
-		"psi-header.changes-tracking": {
-			"isActive": true,
-			"modAuthor": "baxyz",
-			"modDate": " - modDate",
-			"modDateFormat": "dd/MM/yyyy",
-			"include": [
-				"typescript",
-				"javascript"
-			],
-			"exclude": [
-				"plaintext",
-				"markdown"
-			]
-		},
-		"psi-header.lang-config": [
-			{
-				"language": "typescript",
-				"begin": "/**",
-				"prefix": " * ",
-				"end": " */",
-				"blankLinesAfter": 1
-			},
-			{
-				"language": "javascript",
-				"begin": "/**",
-				"prefix": " * ",
-				"end": " */",
-				"blankLinesAfter": 1
-			},
-			{
-				"language": "shellscript",
-				"begin": "",
-				"prefix": "# ",
-				"end": "",
-				"blankLinesAfter": 1,
-				"beforeHeader": [
-					"#!/usr/bin/env bash"
-				]
-			}
-		],
 		"conventionalCommits.scopes": [
 			"governance",
 			"workspace",
@@ -116,24 +36,6 @@
 			{
 				"text": "Generate commit messages in English only. Use Conventional Commits format with a gitmoji between the scope and the description: `<type>(<scope>): <emoji> <description>`. The scope is optional. Allowed scopes depend on the active repo — check that folder's .vscode/settings.json (`conventionalCommits.scopes`). Types and their emoji: feat → ✨, fix → 🐛, docs → 📝, refactor → ♻️, test → ✅, chore → 🔧, perf → 🚀, style → 💄, ci → 👷, build → 📦, revert → ⏪. Always include the emoji. Keep the description short (≤72 chars), lowercase, imperative mood, no period at the end. If there are multiple logical changes, use a bullet list in the body."
 			}
-		]
-	},
-	"extensions": {
-		"recommendations": [
-			"davidanson.vscode-markdownlint",
-			"editorconfig.editorconfig",
-			"github.copilot",
-			"github.copilot-chat",
-			"github.vscode-github-actions",
-			"github.vscode-pull-request-github",
-			"ms-azuretools.vscode-containers",
-			"ms-vscode-remote.remote-containers",
-			"oxc.oxc-vscode",
-			"psioniq.psi-header",
-			"redhat.vscode-yaml",
-			"streetsidesoftware.code-spell-checker",
-			"timonwong.shellcheck",
-			"vivaxy.vscode-conventional-commits"
 		]
 	}
 }
