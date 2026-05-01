@@ -23,16 +23,24 @@
     "HELPERS4_REPOS": ".github action devcontainer typescript website"
   },
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {},
     // moby:false → use upstream docker-ce CLI; required since the base image
     // moved to Debian trixie where moby-cli is no longer packaged.
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
       "moby": false
     },
-    "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {},
+    // Sync local dev dotfiles (Git, SSH, GPG, npm, pnpm, gh prefs, cargo, pip,
+    // yarn) into the container. `syncGhAuth` also brings in the host's gh
+    // OAuth token (~/.config/gh/hosts.yml) so gh CLI is authenticated out of
+    // the box; it is skipped automatically on cloud environments
+    // (Codespaces/Gitpod/DevPod) which inject their own token.
+    "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {
+      "syncGhAuth": true
+    },
     "ghcr.io/helpers4/devcontainer/shell-history-per-project:1": {},
     "ghcr.io/helpers4/devcontainer/git-absorb:1": {},
     "ghcr.io/helpers4/devcontainer/essential-dev:1": {},
+    // Provides gh CLI + GitHub VS Code extensions + shared Copilot Chat
+    // instructions for commit/PR generation.
     "ghcr.io/helpers4/devcontainer/github-dev:1": {},
     "ghcr.io/helpers4/devcontainer/typescript-dev:1": {},
     "ghcr.io/helpers4/devcontainer/vite-plus:1": {},
