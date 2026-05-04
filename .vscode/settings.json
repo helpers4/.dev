@@ -3,6 +3,7 @@
     "governance",
     "workspace",
     "devcontainer",
+    "deps",
     "CI-CD"
   ]
 }
