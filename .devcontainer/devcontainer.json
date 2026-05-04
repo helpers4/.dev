@@ -22,6 +22,13 @@
   "containerEnv": {
     "HELPERS4_REPOS": ".github action devcontainer typescript website"
   },
+  // GH_TOKEN: forwards the host gh CLI token into the container so gh and the
+  // GitHub VS Code extensions are authenticated out of the box. The token is
+  // stored in the host keyring (not a file), so dotfiles-sync cannot sync it.
+  // Set on the host: export GH_TOKEN=$(gh auth token)
+  "remoteEnv": {
+    "GH_TOKEN": "${localEnv:GH_TOKEN}"
+  },
   "features": {
     // moby:false → use upstream docker-ce CLI; required since the base image
     // moved to Debian trixie where moby-cli is no longer packaged.
@@ -33,9 +40,7 @@
     // OAuth token (~/.config/gh/hosts.yml) so gh CLI is authenticated out of
     // the box; it is skipped automatically on cloud environments
     // (Codespaces/Gitpod/DevPod) which inject their own token.
-    "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {
-      "syncGhAuth": true
-    },
+    "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {},
     "ghcr.io/helpers4/devcontainer/shell-history-per-project:1": {},
     "ghcr.io/helpers4/devcontainer/git-absorb:1": {},
     "ghcr.io/helpers4/devcontainer/essential-dev:1": {},
