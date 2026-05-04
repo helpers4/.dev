@@ -5,6 +5,7 @@ This is the **canonical, org-wide** agent guidance for the helpers4 organization
 ## ⛔ CRITICAL RESTRICTIONS
 
 - **NEVER execute `git push`** — The user pushes manually after review.
+- **NEVER execute `git commit` or `git add`** — The user stages and commits manually. Fix files, then stop. Wait for an explicit "commit" instruction.
 - **NEVER use GPT models** — Use Claude models only (claude-sonnet-4, Claude Opus 4.5).
 - **Everything in English** — Code, comments, commits, documentation, logs, PR descriptions.
 - **License is LGPL-3.0-or-later** for every helpers4 repo.
