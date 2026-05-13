@@ -64,15 +64,7 @@
       "extensions": [
         "streetsidesoftware.code-spell-checker",
         "timonwong.shellcheck"
-      ],
-      "settings": {
-        // Prevent Settings Sync from reinstalling extensions that are
-        // intentionally excluded from this devcontainer.
-        "settingsSync.ignoredExtensions": [
-          "eamodio.gitlens",
-          "gxl.git-graph-3"
-        ]
-      }
+      ]
     }
   },
   // Forwarded ports cover every sibling project's dev server.
