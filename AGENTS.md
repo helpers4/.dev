@@ -35,7 +35,7 @@ All repos follow [Conventional Commits](https://www.conventionalcommits.org/) wi
 - Description ≤72 chars, lowercase, imperative mood, no trailing period
 - Always include the emoji
 - Multiple logical changes → bullet list in body
-- Allowed scopes are repo-specific — see each repo's `AGENTS.md` and `.vscode/settings.json` (`conventionalCommits.scopes`)
+- Allowed scopes are repo-specific — see each repo's `.vscode/settings.json` (`conventionalCommits.scopes`)
 
 **Type / emoji table:**
 
@@ -88,7 +88,7 @@ The `psi-header` VS Code extension is configured in the workspace to inject thes
 
 **Purpose:** Orchestrate the helpers4 organization — multi-root VS Code workspace, unified DevContainer, canonical agent rules, shared VS Code settings.
 
-**Allowed scopes:** `governance`, `workspace`, `devcontainer`, `CI-CD`
+**Scopes:** defined in `.vscode/settings.json` (`conventionalCommits.scopes`)
 
 ### Project Structure
 
