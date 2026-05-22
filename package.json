@@ -12,7 +12,8 @@
     "status:all": "node scripts/git-each.mjs status -sb",
     "fetch:all": "node scripts/git-each.mjs fetch --all --prune",
     "pull:all": "node scripts/git-each.mjs pull --rebase --autostash",
-    "branch:all": "node scripts/git-each.mjs branch --show-current"
+    "branch:all": "node scripts/git-each.mjs branch --show-current",
+    "sync-copilot": "node scripts/sync-copilot-instructions.mjs"
   },
   "engines": {
     "node": ">=20"
