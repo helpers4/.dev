@@ -42,6 +42,7 @@
     // (Codespaces/Gitpod/DevPod) which inject their own token.
     "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {},
     "ghcr.io/helpers4/devcontainer/shell-history-per-project:1": {},
+    "ghcr.io/devcontainers-extra/features/git-lfs:1": {},
     "ghcr.io/helpers4/devcontainer/git-absorb:1": {},
     "ghcr.io/helpers4/devcontainer/essential-dev:1": {},
     // Provides gh CLI + GitHub VS Code extensions + shared Copilot Chat
