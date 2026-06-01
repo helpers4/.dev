@@ -1,5 +1,10 @@
 {
   "features": {
+    "ghcr.io/devcontainers-extra/features/git-lfs:1": {
+      "version": "1.0.3",
+      "resolved": "ghcr.io/devcontainers-extra/features/git-lfs@sha256:078d6fa43350ec0c2142fe3e3e432b4e0d2bab82c99ccee7206e8c7589e5bf62",
+      "integrity": "sha256:078d6fa43350ec0c2142fe3e3e432b4e0d2bab82c99ccee7206e8c7589e5bf62"
+    },
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
       "version": "1.9.1",
       "resolved": "ghcr.io/devcontainers/features/docker-outside-of-docker@sha256:dc89605f01ff2f24252c61f7c8ba2a58ccdbc14f2ebf87a7952d9e2b89834850",
@@ -40,6 +45,11 @@
       "resolved": "ghcr.io/helpers4/devcontainer/peon-ping@sha256:6f23e0e8efa7805fb15249daeff2d85959afb63bfc6ac457c015a04f9e844de1",
       "integrity": "sha256:6f23e0e8efa7805fb15249daeff2d85959afb63bfc6ac457c015a04f9e844de1"
     },
+    "ghcr.io/helpers4/devcontainer/pnpm-store:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/helpers4/devcontainer/pnpm-store@sha256:281a8d118c0672000172a01a0c4a7bffa255efe9e855bc217cea9c7570fe8d17",
+      "integrity": "sha256:281a8d118c0672000172a01a0c4a7bffa255efe9e855bc217cea9c7570fe8d17"
+    },
     "ghcr.io/helpers4/devcontainer/shell-history-per-project:1": {
       "version": "1.0.2",
       "resolved": "ghcr.io/helpers4/devcontainer/shell-history-per-project@sha256:a921a4ec0a7472a0d80f1352aa93e118235dfc1aea73dc906a5b3606f964f016",
@@ -54,11 +64,6 @@
       "version": "1.0.2",
       "resolved": "ghcr.io/helpers4/devcontainer/vite-plus@sha256:3aa7727d0413ba6a341fd97fdc7d528f66876055bfb2e006769fb28a7df84ee6",
       "integrity": "sha256:3aa7727d0413ba6a341fd97fdc7d528f66876055bfb2e006769fb28a7df84ee6"
-    },
-    "ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store:1": {
-      "version": "1.0.2",
-      "resolved": "ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store@sha256:32f78bc711aecc2b1479143a4412461b4075c61f0d4776e74265890099a3c7f6",
-      "integrity": "sha256:32f78bc711aecc2b1479143a4412461b4075c61f0d4776e74265890099a3c7f6"
     }
   }
 }

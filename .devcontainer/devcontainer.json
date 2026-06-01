@@ -53,7 +53,7 @@
     "ghcr.io/helpers4/devcontainer/peon-ping:1": {
       "packs": "peasant_fr,peon_fr,warcraft-peon"
     },
-    "ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store:1": {},
+    "ghcr.io/helpers4/devcontainer/pnpm-store:1": {},
     "ghcr.io/helpers4/devcontainer/package-auto-install:1": {},
     "ghcr.io/helpers4/devcontainer/auto-header:1": {
       "projectName": "helpers4",
