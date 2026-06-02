@@ -15,6 +15,11 @@
       "resolved": "ghcr.io/helpers4/devcontainer/auto-header@sha256:4b8011b903d30d12e947e99ec8cad04e55253b5efd3d3bbd41dcaf5f7100ae33",
       "integrity": "sha256:4b8011b903d30d12e947e99ec8cad04e55253b5efd3d3bbd41dcaf5f7100ae33"
     },
+    "ghcr.io/helpers4/devcontainer/claude-dev:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/helpers4/devcontainer/claude-dev@sha256:0d934b763c5c6f2ffc9277c7d3de2f6ef862ae57981037b91d7b40a28c4470b8",
+      "integrity": "sha256:0d934b763c5c6f2ffc9277c7d3de2f6ef862ae57981037b91d7b40a28c4470b8"
+    },
     "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {
       "version": "1.0.4",
       "resolved": "ghcr.io/helpers4/devcontainer/dotfiles-sync@sha256:0c83130721dd7667f76a5c9ad7ab0d7cc3db37cc50320d6c2dc911fc17df48b5",
