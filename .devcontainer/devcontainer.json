@@ -1,18 +1,10 @@
 {
-  "name": "helpers4 🎼",
+  "name": "helpers4",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
-  // Orchestrator devcontainer for the helpers4 organization.
-  //
-  // Bind-mounts every sibling helpers4 repo from the host (../<name>) into
-  // /workspaces/<name>. The multi-root workspace (helpers4.code-workspace)
-  // references each sibling via "../<name>", which resolves to the bind
-  // mount inside the container and to the real sibling folder on host.
-  //
-  // Falls back to `git clone` inside the container if a sibling repo is
-  // missing on host (e.g. GitHub Codespaces) — see setup-container.sh.
   "workspaceFolder": "/workspaces/.dev",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/.dev,type=bind,consistency=cached",
   "mounts": [
+    // ── sibling repos ────────────────────────────────────────────────────────
     "source=${localWorkspaceFolder}/../.github,target=/workspaces/.github,type=bind,consistency=cached",
     "source=${localWorkspaceFolder}/../action,target=/workspaces/action,type=bind,consistency=cached",
     "source=${localWorkspaceFolder}/../devcontainer,target=/workspaces/devcontainer,type=bind,consistency=cached",
@@ -24,30 +16,21 @@
     "HELPERS4_REPOS": ".github action devcontainer typescript website",
     "GH_TOKEN": "${localEnv:GH_TOKEN_FOR_HELPERS4}"
   },
-  // GH_TOKEN: forwards a helpers4-scoped host token into the container so gh
-  // and the GitHub VS Code extensions are authenticated out of the box.
-  // Set on the host: export GH_TOKEN_FOR_HELPERS4=<token>
   "remoteEnv": {
     "GH_TOKEN": "${localEnv:GH_TOKEN_FOR_HELPERS4}"
   },
   "features": {
-    // moby:false → use upstream docker-ce CLI; required since the base image
-    // moved to Debian trixie where moby-cli is no longer packaged.
+    // ── Dev environment ──────────────────────────────────────────────────────
+    "ghcr.io/devcontainers/features/git-lfs:1": {},
+    // ── Infrastructure ───────────────────────────────────────────────────────
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
       "moby": false
     },
-    // Sync local dev dotfiles (Git, SSH, GPG, npm, pnpm, gh prefs, cargo, pip,
-    // yarn) into the container. `syncGhAuth` also brings in the host's gh
-    // OAuth token (~/.config/gh/hosts.yml) so gh CLI is authenticated out of
-    // the box; it is skipped automatically on cloud environments
-    // (Codespaces/Gitpod/DevPod) which inject their own token.
+    // ── helpers4 features ────────────────────────────────────────────────────
     "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {},
     "ghcr.io/helpers4/devcontainer/shell-history-per-project:1": {},
-    "ghcr.io/devcontainers-extra/features/git-lfs:1": {},
     "ghcr.io/helpers4/devcontainer/git-absorb:1": {},
     "ghcr.io/helpers4/devcontainer/essential-dev:1": {},
-    // Provides gh CLI + GitHub VS Code extensions + shared Copilot Chat
-    // instructions for commit/PR generation.
     "ghcr.io/helpers4/devcontainer/github-dev:1": {},
     "ghcr.io/helpers4/devcontainer/typescript-dev:1": {},
     "ghcr.io/helpers4/devcontainer/vite-plus:1": {},
