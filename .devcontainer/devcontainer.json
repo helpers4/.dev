@@ -20,14 +20,15 @@
     "source=${localWorkspaceFolder}/../website,target=/workspaces/website,type=bind,consistency=cached"
   ],
   "containerEnv": {
-    "HELPERS4_REPOS": ".github action devcontainer typescript website"
+    "HELPERS4_ORG": "helpers4",
+    "HELPERS4_REPOS": ".github action devcontainer typescript website",
+    "GH_TOKEN": "${localEnv:GH_TOKEN_FOR_HELPERS4}"
   },
-  // GH_TOKEN: forwards the host gh CLI token into the container so gh and the
-  // GitHub VS Code extensions are authenticated out of the box. The token is
-  // stored in the host keyring (not a file), so dotfiles-sync cannot sync it.
-  // Set on the host: export GH_TOKEN=$(gh auth token)
+  // GH_TOKEN: forwards a helpers4-scoped host token into the container so gh
+  // and the GitHub VS Code extensions are authenticated out of the box.
+  // Set on the host: export GH_TOKEN_FOR_HELPERS4=<token>
   "remoteEnv": {
-    "GH_TOKEN": "${localEnv:GH_TOKEN}"
+    "GH_TOKEN": "${localEnv:GH_TOKEN_FOR_HELPERS4}"
   },
   "features": {
     // moby:false → use upstream docker-ce CLI; required since the base image
