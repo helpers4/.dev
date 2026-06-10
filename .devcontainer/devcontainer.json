@@ -90,5 +90,6 @@
     }
   },
   "remoteUser": "node",
+  "onCreateCommand": "git config --local --unset core.hooksPath || true",
   "postCreateCommand": "bash .devcontainer/setup-container.sh"
 }
