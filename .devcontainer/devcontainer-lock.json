@@ -1,14 +1,14 @@
 {
   "features": {
-    "ghcr.io/devcontainers-extra/features/git-lfs:1": {
-      "version": "1.0.3",
-      "resolved": "ghcr.io/devcontainers-extra/features/git-lfs@sha256:078d6fa43350ec0c2142fe3e3e432b4e0d2bab82c99ccee7206e8c7589e5bf62",
-      "integrity": "sha256:078d6fa43350ec0c2142fe3e3e432b4e0d2bab82c99ccee7206e8c7589e5bf62"
-    },
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
       "version": "1.10.0",
       "resolved": "ghcr.io/devcontainers/features/docker-outside-of-docker@sha256:c2c2cf829505ead8e4892c88c31b6594ae94a2bbb209e16e1fac456c1a3a624e",
       "integrity": "sha256:c2c2cf829505ead8e4892c88c31b6594ae94a2bbb209e16e1fac456c1a3a624e"
+    },
+    "ghcr.io/devcontainers/features/git-lfs:1": {
+      "version": "1.2.5",
+      "resolved": "ghcr.io/devcontainers/features/git-lfs@sha256:71c2b371cf12ab7fcec47cf17369c6f59156100dad9abf9e4c593049d789de72",
+      "integrity": "sha256:71c2b371cf12ab7fcec47cf17369c6f59156100dad9abf9e4c593049d789de72"
     },
     "ghcr.io/helpers4/devcontainer/auto-header:1": {
       "version": "1.0.8",
