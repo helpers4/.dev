@@ -20,30 +20,33 @@
     "GH_TOKEN": "${localEnv:GH_TOKEN_FOR_HELPERS4}"
   },
   "features": {
-    // ── Dev environment ──────────────────────────────────────────────────────
-    "ghcr.io/devcontainers/features/git-lfs:1": {},
     // ── Infrastructure ───────────────────────────────────────────────────────
+    "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {},
+    "ghcr.io/helpers4/devcontainer/shell-history-per-project:1": {},
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
       "moby": false
     },
-    // ── helpers4 features ────────────────────────────────────────────────────
-    "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {},
-    "ghcr.io/helpers4/devcontainer/shell-history-per-project:1": {},
+    // ── Dev environment ──────────────────────────────────────────────────────
+    "ghcr.io/devcontainers/features/git-lfs:1": {},
     "ghcr.io/helpers4/devcontainer/git-absorb:1": {},
     "ghcr.io/helpers4/devcontainer/essential-dev:1": {},
-    "ghcr.io/helpers4/devcontainer/github-dev:1": {},
-    "ghcr.io/helpers4/devcontainer/typescript-dev:1": {},
-    "ghcr.io/helpers4/devcontainer/vite-plus:1": {},
-    "ghcr.io/helpers4/devcontainer/peon-ping:1": {
-      "packs": "peasant_fr,peon_fr,warcraft-peon"
-    },
-    "ghcr.io/helpers4/devcontainer/pnpm-store:1.0.7": {},
-    "ghcr.io/helpers4/devcontainer/claude-dev:1.0.2": {},
-    "ghcr.io/helpers4/devcontainer/package-auto-install:1": {},
+    "ghcr.io/helpers4/devcontainer/github-dev:1.0.5": {},
     "ghcr.io/helpers4/devcontainer/auto-header:1": {
       "projectName": "helpers4",
       "license": "LGPL-3.0-or-later"
-    }
+    },
+    // ── AI ───────────────────────────────────────────────────────────────────
+    "ghcr.io/helpers4/devcontainer/copilot-dev:1": {},
+    "ghcr.io/helpers4/devcontainer/claude-dev:1.0.3": {},
+    "ghcr.io/helpers4/devcontainer/mistral-dev:1": {},
+    "ghcr.io/helpers4/devcontainer/peon-ping:1": {
+      "packs": "peasant_fr,peon_fr,warcraft-peon"
+    },
+    // ── JavaScript ───────────────────────────────────────────────────────────
+    "ghcr.io/helpers4/devcontainer/typescript-dev:1": {},
+    "ghcr.io/helpers4/devcontainer/pnpm-store:1.0.7": {},
+    "ghcr.io/helpers4/devcontainer/package-auto-install:1": {},
+    "ghcr.io/helpers4/devcontainer/vite-plus:1": {}
   },
   "customizations": {
     "vscode": {
