@@ -26,11 +26,6 @@
 		}
 	],
 	"settings": {
-		"github.copilot.chat.commitMessageGeneration.instructions": [
-			{
-				"text": "Generate commit messages in English only. Use Conventional Commits format with a gitmoji: `<type>(<scope>): <emoji> <description>`. Scope is optional; when used, use only the allowed scopes for the active repository — each folder defines its own in its `.vscode/settings.json` (`github.copilot.chat.commitMessageGeneration.instructions`). Types and their emoji: feat → ✨, fix → 🐛, docs → 📝, refactor → ♻️, test → ✅, chore → 🔧, perf → ⚡️, style → 💄, ci → 👷, build → 📦️, revert → ⏪️. Always include exactly ONE emoji. Description ≤72 chars, lowercase, imperative mood, no period. Multiple changes → bullet list in body."
-			}
-		],
 		"typescript.native-preview.tsdk": "/workspaces/typescript/node_modules/@typescript/native-preview"
 	}
 }

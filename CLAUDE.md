@@ -32,12 +32,13 @@ pnpm run test:all     # pnpm test in every repo
 
 **Adding a devcontainer feature** (in `/workspaces/devcontainer`): checklist in order —
 `src/<name>/devcontainer-feature.json`, `install.sh`, `README.md`,
-`test/<name>/test.sh`, `.vscode/settings.json` (add scope to `conventionalCommits.scopes`),
+`test/<name>/test.sh`, `scopes.json` (add feature name),
 both test workflow matrices (`pr-validation.yml` + `test.yml`), `AGENTS.md` features table.
-Missing the scope breaks PR CI.
+Missing the scope in `scopes.json` breaks PR CI.
 
-**Commit scopes**: always read the active repo's `.vscode/settings.json` →
-`conventionalCommits.scopes` before choosing a scope. Never invent a scope that isn't listed.
+**Commit scopes**: always read `scopes.json` at the active repo root before choosing a scope.
+Never invent a scope that isn't listed. Full type→emoji mapping: `/workspaces/.dev/commit-convention.json`.
+Use `/commit` (Claude Code slash command) to auto-generate a message from staged changes.
 
 **License header**: every new source file needs the LGPL-3.0 header — see AGENTS.md for
 the exact comment syntax per language (TS/JS vs Bash).
