@@ -15,15 +15,15 @@
       "resolved": "ghcr.io/helpers4/devcontainer/auto-header@sha256:0c68dc8549082a716cc8de7e52033511d3e0eb24c639dad010459327c65e2743",
       "integrity": "sha256:0c68dc8549082a716cc8de7e52033511d3e0eb24c639dad010459327c65e2743"
     },
-    "ghcr.io/helpers4/devcontainer/claude-dev:1.0.2": {
-      "version": "1.0.2",
-      "resolved": "ghcr.io/helpers4/devcontainer/claude-dev@sha256:49ae20ffb022a1570fa027a00537e4972647281d421fa226f7542bb42042eccd",
-      "integrity": "sha256:49ae20ffb022a1570fa027a00537e4972647281d421fa226f7542bb42042eccd"
+    "ghcr.io/helpers4/devcontainer/claude-dev:1.0.3": {
+      "version": "1.0.3",
+      "resolved": "ghcr.io/helpers4/devcontainer/claude-dev@sha256:57eac5da239f07fc5fba2e82fa71b7f71170cca0b5ae6dd6004af0de0ff0286c",
+      "integrity": "sha256:57eac5da239f07fc5fba2e82fa71b7f71170cca0b5ae6dd6004af0de0ff0286c"
     },
     "ghcr.io/helpers4/devcontainer/copilot-dev:1": {
-      "version": "1.0.1",
-      "resolved": "ghcr.io/helpers4/devcontainer/copilot-dev@sha256:af27cefa1fd16291b0ae996091331111ff5169b2dd60d1d021ec3560992e60da",
-      "integrity": "sha256:af27cefa1fd16291b0ae996091331111ff5169b2dd60d1d021ec3560992e60da"
+      "version": "1.0.3",
+      "resolved": "ghcr.io/helpers4/devcontainer/copilot-dev@sha256:afe7c9f75b8a97f7f4891150c3fc0a5e6c634005be9ad08926c67023af5d1eb4",
+      "integrity": "sha256:afe7c9f75b8a97f7f4891150c3fc0a5e6c634005be9ad08926c67023af5d1eb4"
     },
     "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {
       "version": "1.0.5",
@@ -31,24 +31,32 @@
       "integrity": "sha256:cf0ad2945a23eea50aee3ca6efddda0c50774c8d0633a46b07586d1f29b3e4be"
     },
     "ghcr.io/helpers4/devcontainer/essential-dev:1": {
-      "version": "1.0.7",
-      "resolved": "ghcr.io/helpers4/devcontainer/essential-dev@sha256:6f6a09dcc0e6c3b3158c217219960253365a0d0b432c8b308572e4c950b61340",
-      "integrity": "sha256:6f6a09dcc0e6c3b3158c217219960253365a0d0b432c8b308572e4c950b61340"
+      "version": "1.0.9",
+      "resolved": "ghcr.io/helpers4/devcontainer/essential-dev@sha256:fa2dbd2d0ee918528d861daf15e8fc2a1271a0eb50287496f28d033ef9c22ecb",
+      "integrity": "sha256:fa2dbd2d0ee918528d861daf15e8fc2a1271a0eb50287496f28d033ef9c22ecb",
+      "dependsOn": [
+        "ghcr.io/helpers4/devcontainer/helpers4-common:1"
+      ]
     },
     "ghcr.io/helpers4/devcontainer/git-absorb:1": {
-      "version": "1.0.5",
-      "resolved": "ghcr.io/helpers4/devcontainer/git-absorb@sha256:5ef40cffe5874ad604cd2acf4c4366af16702aeba552190ee836fe57822081d6",
-      "integrity": "sha256:5ef40cffe5874ad604cd2acf4c4366af16702aeba552190ee836fe57822081d6"
+      "version": "1.0.6",
+      "resolved": "ghcr.io/helpers4/devcontainer/git-absorb@sha256:cec5b9739482f4b7aeaa2367fd748775498d8d6ee8163bf826e651ca483846ea",
+      "integrity": "sha256:cec5b9739482f4b7aeaa2367fd748775498d8d6ee8163bf826e651ca483846ea"
     },
     "ghcr.io/helpers4/devcontainer/github-dev:1.0.5": {
       "version": "1.0.5",
       "resolved": "ghcr.io/helpers4/devcontainer/github-dev@sha256:ce3a089d6107b2b979c75b1e37c56a260b81c5b6b9c416107396458b93a20a58",
       "integrity": "sha256:ce3a089d6107b2b979c75b1e37c56a260b81c5b6b9c416107396458b93a20a58"
     },
+    "ghcr.io/helpers4/devcontainer/helpers4-common:1": {
+      "version": "1.0.1",
+      "resolved": "ghcr.io/helpers4/devcontainer/helpers4-common@sha256:9f5b93e5f2f4be868b52754b3bb9e3f3ac8a44f13418d61a1fff0d5618a5893b",
+      "integrity": "sha256:9f5b93e5f2f4be868b52754b3bb9e3f3ac8a44f13418d61a1fff0d5618a5893b"
+    },
     "ghcr.io/helpers4/devcontainer/mistral-dev:1": {
-      "version": "1.0.0",
-      "resolved": "ghcr.io/helpers4/devcontainer/mistral-dev@sha256:333ad3ac58f3a505e8ff67eae6e99303e918c3fb3262a926df29bbc52fc933aa",
-      "integrity": "sha256:333ad3ac58f3a505e8ff67eae6e99303e918c3fb3262a926df29bbc52fc933aa"
+      "version": "1.0.1",
+      "resolved": "ghcr.io/helpers4/devcontainer/mistral-dev@sha256:ac0b9c669873d60a619ab2450c8439bdddd36719fa153f05c9f78323d79b8c30",
+      "integrity": "sha256:ac0b9c669873d60a619ab2450c8439bdddd36719fa153f05c9f78323d79b8c30"
     },
     "ghcr.io/helpers4/devcontainer/package-auto-install:1": {
       "version": "1.0.6",
