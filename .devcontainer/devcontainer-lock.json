@@ -15,10 +15,10 @@
       "resolved": "ghcr.io/helpers4/devcontainer/auto-header@sha256:0c68dc8549082a716cc8de7e52033511d3e0eb24c639dad010459327c65e2743",
       "integrity": "sha256:0c68dc8549082a716cc8de7e52033511d3e0eb24c639dad010459327c65e2743"
     },
-    "ghcr.io/helpers4/devcontainer/claude-dev:1.0.4": {
-      "version": "1.0.4",
-      "resolved": "ghcr.io/helpers4/devcontainer/claude-dev@sha256:b20680ff72532d23e531f07ee12810e37533ee9482e19169cd0b49929ce9eb11",
-      "integrity": "sha256:b20680ff72532d23e531f07ee12810e37533ee9482e19169cd0b49929ce9eb11"
+    "ghcr.io/helpers4/devcontainer/claude-dev:1": {
+      "version": "1.0.3",
+      "resolved": "ghcr.io/helpers4/devcontainer/claude-dev@sha256:57eac5da239f07fc5fba2e82fa71b7f71170cca0b5ae6dd6004af0de0ff0286c",
+      "integrity": "sha256:57eac5da239f07fc5fba2e82fa71b7f71170cca0b5ae6dd6004af0de0ff0286c"
     },
     "ghcr.io/helpers4/devcontainer/copilot-dev:1": {
       "version": "1.0.3",
@@ -43,7 +43,7 @@
       "resolved": "ghcr.io/helpers4/devcontainer/git-absorb@sha256:cec5b9739482f4b7aeaa2367fd748775498d8d6ee8163bf826e651ca483846ea",
       "integrity": "sha256:cec5b9739482f4b7aeaa2367fd748775498d8d6ee8163bf826e651ca483846ea"
     },
-    "ghcr.io/helpers4/devcontainer/github-dev:1.0.5": {
+    "ghcr.io/helpers4/devcontainer/github-dev:1": {
       "version": "1.0.5",
       "resolved": "ghcr.io/helpers4/devcontainer/github-dev@sha256:ce3a089d6107b2b979c75b1e37c56a260b81c5b6b9c416107396458b93a20a58",
       "integrity": "sha256:ce3a089d6107b2b979c75b1e37c56a260b81c5b6b9c416107396458b93a20a58"
@@ -68,7 +68,7 @@
       "resolved": "ghcr.io/helpers4/devcontainer/peon-ping@sha256:cc471d5896ba394a00ee392e74f05f9339968af68937ec7cfad4ab68ff8ca354",
       "integrity": "sha256:cc471d5896ba394a00ee392e74f05f9339968af68937ec7cfad4ab68ff8ca354"
     },
-    "ghcr.io/helpers4/devcontainer/pnpm-store:1.0.7": {
+    "ghcr.io/helpers4/devcontainer/pnpm-store:1": {
       "version": "1.0.7",
       "resolved": "ghcr.io/helpers4/devcontainer/pnpm-store@sha256:fca3484bd17e53cc295808598f4a4cd8e8719b86e6cb5893270ce1cdca4f503c",
       "integrity": "sha256:fca3484bd17e53cc295808598f4a4cd8e8719b86e6cb5893270ce1cdca4f503c"
