@@ -4,7 +4,11 @@ Org-wide rules inherited by all repos. Per-repo `AGENTS.md` only adds repo-speci
 
 ## Restrictions
 
-- **NEVER `git push` or `git commit`** — user commits manually after review
+- **Never `git push` or `git commit` unless explicitly asked this turn** — by default the user
+  commits manually after review. A specific in-conversation request (e.g. "commit by topic as
+  you go") authorizes committing for that task, but is not a standing change to this default —
+  ask again next time unless told otherwise. `git push` still always needs explicit confirmation
+  even when commits are authorized.
 - **English only** — code, comments, commits, docs
 - **LGPL-3.0-or-later** on every file
 
