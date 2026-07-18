@@ -20,6 +20,14 @@
     "GH_TOKEN": "${localEnv:GH_TOKEN_FOR_HELPERS4}"
   },
   "features": {
+    // ── Node.js override (mcr typescript-node:26 doesn't exist yet — Node 26
+    //    ships without Temporal flag but isn't LTS until Oct 2026, so MS
+    //    hasn't published a devcontainers/typescript-node:26 image). Installs
+    //    Node 26 via nvm on top of the image's baked-in Node 24; remove once
+    //    typescript-node:26 is published upstream and bump "image" instead.
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "26"
+    },
     // ── Infrastructure ───────────────────────────────────────────────────────
     "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {},
     "ghcr.io/helpers4/devcontainer/shell-history-per-project:1": {},
