@@ -20,7 +20,7 @@
       "resolved": "ghcr.io/helpers4/devcontainer/auto-header@sha256:0c68dc8549082a716cc8de7e52033511d3e0eb24c639dad010459327c65e2743",
       "integrity": "sha256:0c68dc8549082a716cc8de7e52033511d3e0eb24c639dad010459327c65e2743"
     },
-    "ghcr.io/helpers4/devcontainer/claude-dev:1": {
+    "ghcr.io/helpers4/devcontainer/claude-dev:1.0.4": {
       "version": "1.0.4",
       "resolved": "ghcr.io/helpers4/devcontainer/claude-dev@sha256:b20680ff72532d23e531f07ee12810e37533ee9482e19169cd0b49929ce9eb11",
       "integrity": "sha256:b20680ff72532d23e531f07ee12810e37533ee9482e19169cd0b49929ce9eb11"
