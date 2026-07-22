@@ -25,7 +25,7 @@
     //    hasn't published a devcontainers/typescript-node:26 image). Installs
     //    Node 26 via nvm on top of the image's baked-in Node 24; remove once
     //    typescript-node:26 is published upstream and bump "image" instead.
-    "ghcr.io/devcontainers/features/node:1": {
+    "ghcr.io/devcontainers/features/node:2": {
       "version": "26"
     },
     // ── Infrastructure ───────────────────────────────────────────────────────
