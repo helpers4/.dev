@@ -31,9 +31,9 @@
       "integrity": "sha256:afe7c9f75b8a97f7f4891150c3fc0a5e6c634005be9ad08926c67023af5d1eb4"
     },
     "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {
-      "version": "1.0.5",
-      "resolved": "ghcr.io/helpers4/devcontainer/dotfiles-sync@sha256:cf0ad2945a23eea50aee3ca6efddda0c50774c8d0633a46b07586d1f29b3e4be",
-      "integrity": "sha256:cf0ad2945a23eea50aee3ca6efddda0c50774c8d0633a46b07586d1f29b3e4be"
+      "version": "1.0.6",
+      "resolved": "ghcr.io/helpers4/devcontainer/dotfiles-sync@sha256:f50abc49ad18843f657040a0eceaa5008a4d6e7600d115ec9362acb0d20a3809",
+      "integrity": "sha256:f50abc49ad18843f657040a0eceaa5008a4d6e7600d115ec9362acb0d20a3809"
     },
     "ghcr.io/helpers4/devcontainer/essential-dev:1": {
       "version": "1.0.9",
