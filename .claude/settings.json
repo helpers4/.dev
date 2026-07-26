@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [],
     "additionalDirectories": [
-      "/workspaces/typescript/.claude/skills"
+      "/workspaces/typescript/.claude/skills",
+      "/workspaces/devcontainer/.claude/skills"
     ]
   }
 }
