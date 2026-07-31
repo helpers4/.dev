@@ -66,40 +66,14 @@
       ]
     }
   },
-  // Forwarded ports cover every sibling project's dev server.
-  // typescript: 3000 / website landing: 3000 / docusaurus: 3001-3003 / vite fallback: 5173 / angular: 4200
+  // Only `website` (Astro) runs a dev server; other repos have none to forward.
   "forwardPorts": [
-    3000,
-    3001,
-    3002,
-    3003,
-    4200,
-    5173
+    4321
   ],
   "portsAttributes": {
-    "3000": {
-      "label": "TS / landing dev server",
+    "4321": {
+      "label": "website — Astro dev server",
       "onAutoForward": "notify"
-    },
-    "3001": {
-      "label": "Docusaurus — typescript",
-      "onAutoForward": "silent"
-    },
-    "3002": {
-      "label": "Docusaurus — devcontainer",
-      "onAutoForward": "silent"
-    },
-    "3003": {
-      "label": "Docusaurus — action",
-      "onAutoForward": "silent"
-    },
-    "4200": {
-      "label": "Angular dev server",
-      "onAutoForward": "silent"
-    },
-    "5173": {
-      "label": "Vite dev server (fallback)",
-      "onAutoForward": "silent"
     }
   },
   "remoteUser": "node",
