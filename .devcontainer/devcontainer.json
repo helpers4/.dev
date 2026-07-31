@@ -53,7 +53,9 @@
     // ── JavaScript ───────────────────────────────────────────────────────────
     "ghcr.io/helpers4/devcontainer/typescript-dev:1": {},
     "ghcr.io/helpers4/devcontainer/pnpm-store:1": {},
-    "ghcr.io/helpers4/devcontainer/package-auto-install:1": {},
+    "ghcr.io/helpers4/devcontainer/package-auto-install:1": {
+      "autoDiscover": true
+    },
     "ghcr.io/helpers4/devcontainer/vite-plus:1": {}
   },
   "customizations": {
