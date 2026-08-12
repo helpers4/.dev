@@ -31,9 +31,9 @@
       "integrity": "sha256:afe7c9f75b8a97f7f4891150c3fc0a5e6c634005be9ad08926c67023af5d1eb4"
     },
     "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {
-      "version": "1.0.7",
-      "resolved": "ghcr.io/helpers4/devcontainer/dotfiles-sync@sha256:645ab30f4c33a5b6faebe079a6325689c7b666364a3b06af35dd6cdaadb89472",
-      "integrity": "sha256:645ab30f4c33a5b6faebe079a6325689c7b666364a3b06af35dd6cdaadb89472"
+      "version": "1.0.8",
+      "resolved": "ghcr.io/helpers4/devcontainer/dotfiles-sync@sha256:97d75deca57747daf8f7bfaa45289a6fe8a2fcd2b0bb41fb3d4f1b54aba5d892",
+      "integrity": "sha256:97d75deca57747daf8f7bfaa45289a6fe8a2fcd2b0bb41fb3d4f1b54aba5d892"
     },
     "ghcr.io/helpers4/devcontainer/essential-dev:1": {
       "version": "1.0.9",
@@ -64,14 +64,14 @@
       "integrity": "sha256:d170fb363ee3e69eaef42c02d9e456d2ec19e16febbca5dbab2d962894322231"
     },
     "ghcr.io/helpers4/devcontainer/package-auto-install:1": {
-      "version": "1.0.7",
-      "resolved": "ghcr.io/helpers4/devcontainer/package-auto-install@sha256:73b9ea718ef71b0a7a9cfb6695190f9820efa7af340d66121ea4b06e4e372129",
-      "integrity": "sha256:73b9ea718ef71b0a7a9cfb6695190f9820efa7af340d66121ea4b06e4e372129"
+      "version": "1.0.9",
+      "resolved": "ghcr.io/helpers4/devcontainer/package-auto-install@sha256:e401347de202ada1237ebcab1cbc8d1ba12f7be8e2d87ca254968f6798303fda",
+      "integrity": "sha256:e401347de202ada1237ebcab1cbc8d1ba12f7be8e2d87ca254968f6798303fda"
     },
     "ghcr.io/helpers4/devcontainer/peon-ping:1": {
-      "version": "1.0.3",
-      "resolved": "ghcr.io/helpers4/devcontainer/peon-ping@sha256:cc471d5896ba394a00ee392e74f05f9339968af68937ec7cfad4ab68ff8ca354",
-      "integrity": "sha256:cc471d5896ba394a00ee392e74f05f9339968af68937ec7cfad4ab68ff8ca354"
+      "version": "1.0.5",
+      "resolved": "ghcr.io/helpers4/devcontainer/peon-ping@sha256:986fc682e6169535f27c977e42fcf58e090f17d54782c9af7ba9ba33d5b17a8c",
+      "integrity": "sha256:986fc682e6169535f27c977e42fcf58e090f17d54782c9af7ba9ba33d5b17a8c"
     },
     "ghcr.io/helpers4/devcontainer/pnpm-store:1": {
       "version": "1.0.7",
