@@ -59,9 +59,9 @@
       "integrity": "sha256:9f5b93e5f2f4be868b52754b3bb9e3f3ac8a44f13418d61a1fff0d5618a5893b"
     },
     "ghcr.io/helpers4/devcontainer/mistral-dev:1": {
-      "version": "1.0.3",
-      "resolved": "ghcr.io/helpers4/devcontainer/mistral-dev@sha256:d170fb363ee3e69eaef42c02d9e456d2ec19e16febbca5dbab2d962894322231",
-      "integrity": "sha256:d170fb363ee3e69eaef42c02d9e456d2ec19e16febbca5dbab2d962894322231"
+      "version": "1.0.5",
+      "resolved": "ghcr.io/helpers4/devcontainer/mistral-dev@sha256:d5d9fd8062c9ba929eef5320cf660d0c31a17a0bd27174ac64a2673470f91a60",
+      "integrity": "sha256:d5d9fd8062c9ba929eef5320cf660d0c31a17a0bd27174ac64a2673470f91a60"
     },
     "ghcr.io/helpers4/devcontainer/package-auto-install:1": {
       "version": "1.0.9",
@@ -69,9 +69,9 @@
       "integrity": "sha256:e401347de202ada1237ebcab1cbc8d1ba12f7be8e2d87ca254968f6798303fda"
     },
     "ghcr.io/helpers4/devcontainer/peon-ping:1": {
-      "version": "1.0.5",
-      "resolved": "ghcr.io/helpers4/devcontainer/peon-ping@sha256:986fc682e6169535f27c977e42fcf58e090f17d54782c9af7ba9ba33d5b17a8c",
-      "integrity": "sha256:986fc682e6169535f27c977e42fcf58e090f17d54782c9af7ba9ba33d5b17a8c"
+      "version": "1.0.6",
+      "resolved": "ghcr.io/helpers4/devcontainer/peon-ping@sha256:fb4e61f036e811f41ce59422f811687b9639170a88fc8fc6f5f44306bdca8edf",
+      "integrity": "sha256:fb4e61f036e811f41ce59422f811687b9639170a88fc8fc6f5f44306bdca8edf"
     },
     "ghcr.io/helpers4/devcontainer/pnpm-store:1": {
       "version": "1.0.7",
