@@ -20,10 +20,10 @@
       "resolved": "ghcr.io/helpers4/devcontainer/auto-header@sha256:0c68dc8549082a716cc8de7e52033511d3e0eb24c639dad010459327c65e2743",
       "integrity": "sha256:0c68dc8549082a716cc8de7e52033511d3e0eb24c639dad010459327c65e2743"
     },
-    "ghcr.io/helpers4/devcontainer/claude-dev:1.0.5": {
-      "version": "1.0.5",
-      "resolved": "ghcr.io/helpers4/devcontainer/claude-dev@sha256:105e6e3b6511f18111d21a0546f5d11eca1176d0e45290f89e64134f00652904",
-      "integrity": "sha256:105e6e3b6511f18111d21a0546f5d11eca1176d0e45290f89e64134f00652904"
+    "ghcr.io/helpers4/devcontainer/claude-dev:1.0.7": {
+      "version": "1.0.7",
+      "resolved": "ghcr.io/helpers4/devcontainer/claude-dev@sha256:cc9ffab123a63f78e31c49ef2cb7e1b325bb6a62f90392492af0211fd0e5f0e6",
+      "integrity": "sha256:cc9ffab123a63f78e31c49ef2cb7e1b325bb6a62f90392492af0211fd0e5f0e6"
     },
     "ghcr.io/helpers4/devcontainer/copilot-dev:1": {
       "version": "1.0.3",
