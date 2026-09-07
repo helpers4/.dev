@@ -12,6 +12,19 @@ Org-wide rules inherited by all repos. Per-repo `AGENTS.md` only adds repo-speci
 - **English only** — code, comments, commits, docs
 - **LGPL-3.0-or-later** on every file
 
+## Code Comments
+
+Write comments for someone reading the code cold — they never see the diff or the previous
+version, only what's in front of them. Describe what the code *is* and *why* it's that way,
+never what changed to get there.
+
+- ❌ `contents: write # was read-only — this job now also commits X`
+- ✅ `contents: write # commits X`
+
+If a comment needs "was"/"before"/"previously"/"now" (or a timestamp: "as of writing", "since
+last month") to make sense, that content belongs in the commit message or PR description, not
+the code — it rots the moment someone reads the file without the diff in front of them.
+
 ## Repos
 
 | Repo | Purpose |
