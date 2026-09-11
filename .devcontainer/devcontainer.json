@@ -1,8 +1,8 @@
 {
   "name": "helpers4",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
-  "workspaceFolder": "/workspaces/helpers4-dev",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/helpers4-dev,type=bind,consistency=cached",
+  "workspaceFolder": "/workspaces/.dev",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/.dev,type=bind,consistency=cached",
   "mounts": [
     // ── sibling repos ────────────────────────────────────────────────────────
     "source=${localWorkspaceFolder}/../.github,target=/workspaces/.github,type=bind,consistency=cached",

@@ -62,7 +62,7 @@ VS Code displays all six folders side by side with consistent settings (commit m
 
 When prompted, *Reopen in Container* — or run **Dev Containers: Reopen in Container** from the command palette. The container:
 
-- bind-mounts `.dev/` at `/workspaces/helpers4-dev`
+- bind-mounts `.dev/` at `/workspaces/.dev`
 - bind-mounts each sibling repo at `/workspaces/<name>` so the same `../<name>` path used by the workspace resolves correctly inside the container
 - runs [`setup-container.sh`](./.devcontainer/setup-container.sh) on first start to:
   - clone any sibling repo missing on the host (Codespaces fallback)
