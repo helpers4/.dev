@@ -6,8 +6,11 @@
 # helpers4 orchestrator — devcontainer setup
 # -----------------------------------------------------------------------------
 # For every sibling repo declared in $HELPERS4_REPOS, ensure it exists at
-# /workspaces/<repo>. If the bind-mount target is empty (Codespaces or
-# fresh machine), fall back to `git clone`.
+# /workspaces/<repo>. Each lives on its own named Docker volume (see
+# devcontainer.json's "mounts"), not a host bind mount — this loop only
+# actually clones on a fresh volume (first-ever run, or after a full
+# teardown: `docker volume rm`, deleted Codespace); a plain "Rebuild
+# Container" keeps whatever was already cloned/committed here.
 # pnpm install is handled by the package-auto-install feature (autoDiscover).
 # -----------------------------------------------------------------------------
 set -euo pipefail
@@ -32,4 +35,3 @@ done
 
 echo "🎉 helpers4 orchestrator ready."
 echo "   Open helpers4.code-workspace to load every repo at once."
-echo "   Try: pnpm run status:all | pull:all | branch:all"
