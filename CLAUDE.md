@@ -20,13 +20,13 @@ All repos are bind-mounted at `/workspaces/<name>` and open together in
 ## Cross-repo commands (run from `/workspaces/.dev`)
 
 ```bash
-pnpm run status:all   # git status -sb in every repo
-pnpm run fetch:all    # git fetch --all --prune in every repo
-pnpm run pull:all     # git pull --rebase in every repo
-pnpm run branch:all   # show active branch in every repo
-pnpm run build:all    # pnpm build in every repo
-pnpm run test:all     # pnpm test in every repo
+pnpm run sync-copilot   # regenerate .vscode/copilot-commit.md in every sibling repo
 ```
+
+There's no `*:all` git/build/test orchestration here anymore — each repo lives
+on its own named devcontainer volume (see `.devcontainer/devcontainer.json`'s
+`mounts`), not a host bind mount, so there's no shared host-side script to run
+git/pnpm commands across every sibling from outside the container.
 
 ## Common gotchas
 
@@ -48,6 +48,7 @@ the exact comment syntax per language (TS/JS vs Bash).
 
 ## AI persistence
 
-`~/.claude` is bind-mounted from the host and symlinked at every container start by
-`claude-dev`. Memory, credentials, and settings survive all rebuilds.
-The auto-memory directory for this workspace is `~/.claude/projects/-workspaces--dev/memory/`.
+`~/.claude` is bind-mounted from a **per-devcontainer** volume and symlinked at
+every container start by `claude-dev` — isolated to this project, not shared
+with any other org's devcontainer. Memory, credentials, and settings survive
+rebuilds of this same devcontainer.

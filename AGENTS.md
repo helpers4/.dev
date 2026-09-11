@@ -4,13 +4,31 @@ Org-wide rules inherited by all repos. Per-repo `AGENTS.md` only adds repo-speci
 
 ## Restrictions
 
-- **Never `git push` or `git commit` unless explicitly asked this turn** — by default the user
-  commits manually after review. A specific in-conversation request (e.g. "commit by topic as
-  you go") authorizes committing for that task, but is not a standing change to this default —
-  ask again next time unless told otherwise. `git push` still always needs explicit confirmation
-  even when commits are authorized.
 - **English only** — code, comments, commits, docs
 - **LGPL-3.0-or-later** on every file
+
+## Git Workflow
+
+Default policy — nuanced, not a hard rule: ask if a specific task calls for
+something different, but absent other instructions:
+
+1. **Branch** — work on a branch, never directly on `main`. Create the branch
+   (`git checkout -b <name>`) *before* the first commit — never commit while
+   on `main` and rename the branch afterward, since that can leave the
+   branch's upstream tracking pointed at `origin/main` and let a later push
+   land directly on `main` unnoticed. Group related changes on the same
+   branch instead of opening a new one per small change.
+2. **Commit** — one commit per subject, Conventional Commits format mandatory
+   (see Commit Messages below).
+3. **Push** — only once it looks safe to do so; a human review of the diff
+   first is recommended for anything non-trivial. Ask if unsure.
+4. **Pull Request** — open one once pushed.
+5. **Merge** — never merge. Merging is always a human decision.
+
+A narrow, temporary carve-out (e.g. "push straight to `main` for this one fix")
+may be granted in conversation for a specific piece of work — treat it as
+scoped to exactly what was said, never as a standing precedent to reuse
+elsewhere or later without asking again.
 
 ## Code Comments
 
@@ -56,7 +74,7 @@ Rules: ≤72 chars · lowercase · imperative · no trailing period · one emoji
 | build | 📦️ | ➕ add · ➖ remove · ⬆️ upgrade · ⬇️ downgrade dep | Build |
 | revert | ⏪️ | | Revert |
 
-Examples: `feat(array): ✨ add flatMap helper` · `fix(CI-CD): 🐛 fix checkout depth` · `chore(pnpm-store): ⬆️ bump version`
+Examples: `feat(array): ✨ add flatMap helper` · `fix(ci): 🐛 fix checkout depth` · `chore(pnpm-store): ⬆️ bump version`
 
 ## License Header
 
