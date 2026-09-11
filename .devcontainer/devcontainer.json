@@ -3,13 +3,19 @@
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
   "workspaceFolder": "/workspaces/.dev",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/.dev,type=bind,consistency=cached",
+  // Named volumes, not host bind-mounts — bind-mounting `../<repo>` only works
+  // for a local Docker Desktop/WSL2 checkout with every repo pre-cloned side
+  // by side; it silently breaks GitHub Codespaces, which only ever checks out
+  // the one repo the codespace was launched from. A named volume survives
+  // "Rebuild Container" on the same Docker host/Codespace; only a full
+  // teardown (`docker volume rm`, deleted Codespace) resets it to a fresh
+  // clone via setup-container.sh.
   "mounts": [
-    // ── sibling repos ────────────────────────────────────────────────────────
-    "source=${localWorkspaceFolder}/../.github,target=/workspaces/.github,type=bind,consistency=cached",
-    "source=${localWorkspaceFolder}/../action,target=/workspaces/action,type=bind,consistency=cached",
-    "source=${localWorkspaceFolder}/../devcontainer,target=/workspaces/devcontainer,type=bind,consistency=cached",
-    "source=${localWorkspaceFolder}/../typescript,target=/workspaces/typescript,type=bind,consistency=cached",
-    "source=${localWorkspaceFolder}/../website,target=/workspaces/website,type=bind,consistency=cached"
+    "source=helpers4-repo-github,target=/workspaces/.github,type=volume",
+    "source=helpers4-repo-action,target=/workspaces/action,type=volume",
+    "source=helpers4-repo-devcontainer,target=/workspaces/devcontainer,type=volume",
+    "source=helpers4-repo-typescript,target=/workspaces/typescript,type=volume",
+    "source=helpers4-repo-website,target=/workspaces/website,type=volume"
   ],
   "containerEnv": {
     "HELPERS4_ORG": "helpers4",
