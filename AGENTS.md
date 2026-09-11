@@ -54,7 +54,7 @@ the code — it rots the moment someone reads the file without the diff in front
 
 Format: `<type>(<scope>): <emoji> <description>` ([Conventional Commits](https://www.conventionalcommits.org/) + [gitmoji](https://gitmoji.dev))
 
-Rules: ≤72 chars · lowercase · imperative · no trailing period · one emoji always · scopes from `scopes.json` at repo root · machine-readable convention in `/workspaces/helpers4-dev/commit-convention.json`
+Rules: ≤72 chars · lowercase · imperative · no trailing period · one emoji always · scopes from `scopes.json` at repo root · machine-readable convention in `/workspaces/.dev/commit-convention.json`
 
 | Type | Emoji | Alternatives | When |
 | ---- | ----- | ------------ | ---- |
