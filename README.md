@@ -63,27 +63,18 @@ VS Code displays all six folders side by side with consistent settings (commit m
 When prompted, *Reopen in Container* — or run **Dev Containers: Reopen in Container** from the command palette. The container:
 
 - bind-mounts `.dev/` at `/workspaces/.dev`
-- bind-mounts each sibling repo at `/workspaces/<name>` so the same `../<name>` path used by the workspace resolves correctly inside the container
+- mounts each sibling repo at `/workspaces/<name>` on its own named Docker volume — not a host bind mount, so the same devcontainer works on GitHub Codespaces too, not just a local checkout with every repo pre-cloned side by side
 - runs [`setup-container.sh`](./.devcontainer/setup-container.sh) on first start to:
-  - clone any sibling repo missing on the host (Codespaces fallback)
+  - clone any sibling repo missing from its volume (fresh volume / Codespaces)
   - run `pnpm install` in every sibling that has a `package.json`
 
-### 4. Cross-repo commands
+### 4. Syncing Copilot commit instructions
 
-From `.dev/`, run any of:
+From `.dev/`:
 
 ```bash
-pnpm run install:all   # pnpm install in every sibling
-pnpm run build:all     # pnpm run build in every sibling that defines it
-pnpm run test:all
-pnpm run lint:all
-pnpm run status:all    # git status -sb in every repo
-pnpm run fetch:all     # git fetch --all --prune
-pnpm run pull:all      # git pull --rebase --autostash
-pnpm run branch:all    # show current branch
+pnpm run sync-copilot   # regenerate .vscode/copilot-commit.md in every sibling repo
 ```
-
-Powered by [`scripts/run-each.mjs`](./scripts/run-each.mjs) and [`scripts/git-each.mjs`](./scripts/git-each.mjs).
 
 ## What Lives Here
 
@@ -92,9 +83,8 @@ Powered by [`scripts/run-each.mjs`](./scripts/run-each.mjs) and [`scripts/git-ea
 | [`helpers4.code-workspace`](./helpers4.code-workspace) | VS Code multi-root workspace + shared settings |
 | [`.devcontainer/devcontainer.json`](./.devcontainer/devcontainer.json) | Cross-repo dev environment (Node, pnpm, gh, helpers4 features) |
 | [`.devcontainer/setup-container.sh`](./.devcontainer/setup-container.sh) | postCreateCommand — clone-fallback + pnpm install |
-| [`scripts/run-each.mjs`](./scripts/run-each.mjs) | Run a pnpm script in every sibling repo |
-| [`scripts/git-each.mjs`](./scripts/git-each.mjs) | Run a git command in every sibling repo |
-| [`package.json`](./package.json) | Cross-repo orchestration scripts (`*:all`) |
+| [`scripts/sync-copilot-instructions.mjs`](./scripts/sync-copilot-instructions.mjs) | Regenerate Copilot's commit-scope instructions per repo |
+| [`package.json`](./package.json) | `sync-copilot` script |
 | [`AGENTS.md`](./AGENTS.md) | Canonical org-wide agent instructions |
 | [`.vscode/settings.json`](./.vscode/settings.json) | Settings applied when opening `.dev/` standalone |
 | [`LICENSE`](./LICENSE) | LGPL-3.0-or-later |
