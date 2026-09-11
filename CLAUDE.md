@@ -20,13 +20,13 @@ All repos are bind-mounted at `/workspaces/<name>` and open together in
 ## Cross-repo commands (run from `/workspaces/.dev`)
 
 ```bash
-pnpm run status:all   # git status -sb in every repo
-pnpm run fetch:all    # git fetch --all --prune in every repo
-pnpm run pull:all     # git pull --rebase in every repo
-pnpm run branch:all   # show active branch in every repo
-pnpm run build:all    # pnpm build in every repo
-pnpm run test:all     # pnpm test in every repo
+pnpm run sync-copilot   # regenerate .vscode/copilot-commit.md in every sibling repo
 ```
+
+There's no `*:all` git/build/test orchestration here anymore — each repo lives
+on its own named devcontainer volume (see `.devcontainer/devcontainer.json`'s
+`mounts`), not a host bind mount, so there's no shared host-side script to run
+git/pnpm commands across every sibling from outside the container.
 
 ## Common gotchas
 
