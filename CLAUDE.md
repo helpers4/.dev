@@ -10,14 +10,14 @@ All repos are bind-mounted at `/workspaces/<name>` and open together in
 
 | Path | Repo | Role |
 | ---- | ---- | ---- |
-| `/workspaces/.dev` | `.dev` | Orchestration — canonical AGENTS.md, devcontainer, scripts |
+| `/workspaces/helpers4-dev` | `.dev` | Orchestration — canonical AGENTS.md, devcontainer, scripts |
 | `/workspaces/devcontainer` | `devcontainer` | DevContainer Features published to GHCR |
 | `/workspaces/typescript` | `typescript` | Tree-shakable TS utility library |
 | `/workspaces/action` | `action` | Reusable GitHub Actions |
 | `/workspaces/website` | `website` | Astro + Starlight docs site (helpers4.dev) |
 | `/workspaces/.github` | `.github` | Org GitHub config (workflows, templates) |
 
-## Cross-repo commands (run from `/workspaces/.dev`)
+## Cross-repo commands (run from `/workspaces/helpers4-dev`)
 
 ```bash
 pnpm run status:all   # git status -sb in every repo
@@ -37,7 +37,7 @@ both test workflow matrices (`pr-validation.yml` + `test.yml`), `AGENTS.md` feat
 Missing the scope in `scopes.json` breaks PR CI.
 
 **Commit scopes**: always read `scopes.json` at the active repo root before choosing a scope.
-Never invent a scope that isn't listed. Full type→emoji mapping: `/workspaces/.dev/commit-convention.json`.
+Never invent a scope that isn't listed. Full type→emoji mapping: `/workspaces/helpers4-dev/commit-convention.json`.
 Use `/commit` (Claude Code slash command) to auto-generate a message from staged changes.
 
 **License header**: every new source file needs the LGPL-3.0 header — see AGENTS.md for
@@ -48,6 +48,7 @@ the exact comment syntax per language (TS/JS vs Bash).
 
 ## AI persistence
 
-`~/.claude` is bind-mounted from the host and symlinked at every container start by
-`claude-dev`. Memory, credentials, and settings survive all rebuilds.
-The auto-memory directory for this workspace is `~/.claude/projects/-workspaces--dev/memory/`.
+`~/.claude` is bind-mounted from a **per-devcontainer** volume and symlinked at
+every container start by `claude-dev` — isolated to this project, not shared
+with any other org's devcontainer. Memory, credentials, and settings survive
+rebuilds of this same devcontainer.
