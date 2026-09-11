@@ -1,7 +1,9 @@
 [
-  "governance",
+  "ai",
   "workspace",
   "devcontainer",
   "deps",
-  "CI-CD"
+  "docs",
+  "ci",
+  "scripts"
 ]
