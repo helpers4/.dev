@@ -63,10 +63,8 @@ VS Code displays all six folders side by side with consistent settings (commit m
 When prompted, *Reopen in Container* — or run **Dev Containers: Reopen in Container** from the command palette. The container:
 
 - bind-mounts `.dev/` at `/workspaces/.dev`
-- mounts each sibling repo at `/workspaces/<name>` on its own named Docker volume — not a host bind mount, so the same devcontainer works on GitHub Codespaces too, not just a local checkout with every repo pre-cloned side by side
-- runs [`setup-container.sh`](./.devcontainer/setup-container.sh) on first start to:
-  - clone any sibling repo missing from its volume (fresh volume / Codespaces)
-  - run `pnpm install` in every sibling that has a `package.json`
+- clones every other repo of the org into `/workspaces/<name>` on first start (the [`org-workspace`](https://github.com/helpers4/devcontainer/tree/main/src/org-workspace) Feature, into a named Docker volume that survives rebuilds — not a host bind mount, so the same devcontainer works on GitHub Codespaces too), and prunes the ones no longer wanted
+- runs `pnpm install` in every sibling that has a `package.json` (the `package-auto-install` Feature)
 
 ### 4. Syncing Copilot commit instructions
 
@@ -82,7 +80,6 @@ pnpm run sync-copilot   # regenerate .vscode/copilot-commit.md in every sibling 
 |------|---------|
 | [`helpers4.code-workspace`](./helpers4.code-workspace) | VS Code multi-root workspace + shared settings |
 | [`.devcontainer/devcontainer.json`](./.devcontainer/devcontainer.json) | Cross-repo dev environment (Node, pnpm, gh, helpers4 features) |
-| [`.devcontainer/setup-container.sh`](./.devcontainer/setup-container.sh) | postCreateCommand — clone-fallback + pnpm install |
 | [`scripts/sync-copilot-instructions.mjs`](./scripts/sync-copilot-instructions.mjs) | Regenerate Copilot's commit-scope instructions per repo |
 | [`package.json`](./package.json) | `sync-copilot` script |
 | [`AGENTS.md`](./AGENTS.md) | Canonical org-wide agent instructions |
