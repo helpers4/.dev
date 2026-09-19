@@ -96,4 +96,12 @@ Examples: `feat(array): ✨ add flatMap helper` · `fix(ci): 🐛 fix checkout d
 # SPDX-License-Identifier: LGPL-3.0-or-later
 ```
 
+**Rust:**
+
+```rust
+// This file is part of helpers4.
+// Copyright (C) 2025 baxyz
+// SPDX-License-Identifier: LGPL-3.0-or-later
+```
+
 `psi-header` (VS Code extension) injects these automatically.
