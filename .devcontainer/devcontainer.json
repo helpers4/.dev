@@ -3,23 +3,7 @@
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
   "workspaceFolder": "/workspaces/.dev",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/.dev,type=bind,consistency=cached",
-  // Named volumes, not host bind-mounts — bind-mounting `../<repo>` only works
-  // for a local Docker Desktop/WSL2 checkout with every repo pre-cloned side
-  // by side; it silently breaks GitHub Codespaces, which only ever checks out
-  // the one repo the codespace was launched from. A named volume survives
-  // "Rebuild Container" on the same Docker host/Codespace; only a full
-  // teardown (`docker volume rm`, deleted Codespace) resets it to a fresh
-  // clone via setup-container.sh.
-  "mounts": [
-    "source=helpers4-repo-github,target=/workspaces/.github,type=volume",
-    "source=helpers4-repo-action,target=/workspaces/action,type=volume",
-    "source=helpers4-repo-devcontainer,target=/workspaces/devcontainer,type=volume",
-    "source=helpers4-repo-typescript,target=/workspaces/typescript,type=volume",
-    "source=helpers4-repo-website,target=/workspaces/website,type=volume"
-  ],
   "containerEnv": {
-    "HELPERS4_ORG": "helpers4",
-    "HELPERS4_REPOS": ".github action devcontainer typescript website",
     "GH_TOKEN": "${localEnv:GH_TOKEN_FOR_HELPERS4}"
   },
   "remoteEnv": {
@@ -33,6 +17,10 @@
     //    typescript-node:26 is published upstream and bump "image" instead.
     "ghcr.io/devcontainers/features/node:2": {
       "version": "26"
+    },
+    "ghcr.io/helpers4/devcontainer/org-workspace:1": {
+      "autoDiscover": "public,private,internal,fork",
+      "exclude": "helpers4.github.io"
     },
     // ── Infrastructure ───────────────────────────────────────────────────────
     "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {},
@@ -85,6 +73,5 @@
   },
   "remoteUser": "node",
   "initializeCommand": "mkdir -p ~/.claude",
-  "onCreateCommand": "git config --local --unset core.hooksPath || true",
-  "postCreateCommand": "bash .devcontainer/setup-container.sh"
+  "onCreateCommand": "git config --local --unset core.hooksPath || true"
 }
