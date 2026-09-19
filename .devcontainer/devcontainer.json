@@ -46,6 +46,8 @@
     "ghcr.io/helpers4/devcontainer/peon-ping:1": {
       "healHostRelay": true
     },
+    // ── Rust ─────────────────────────────────────────────────────────────────
+    "ghcr.io/devcontainers/features/rust:1": {},
     // ── JavaScript ───────────────────────────────────────────────────────────
     "ghcr.io/helpers4/devcontainer/typescript-dev:1": {},
     "ghcr.io/helpers4/devcontainer/pnpm-store:1": {},
