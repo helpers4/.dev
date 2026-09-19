@@ -40,10 +40,11 @@
     },
     // ── AI ───────────────────────────────────────────────────────────────────
     "ghcr.io/helpers4/devcontainer/copilot-dev:1": {},
-    "ghcr.io/helpers4/devcontainer/claude-dev:1.0.7": {},
+    "ghcr.io/helpers4/devcontainer/claude-dev:1": {},
     "ghcr.io/helpers4/devcontainer/mistral-dev:1": {},
+    "ghcr.io/helpers4/devcontainer/cline-dev:1": {},
     "ghcr.io/helpers4/devcontainer/peon-ping:1": {
-      "packs": "peasant_fr,peon_fr,warcraft-peon"
+      "healHostRelay": true
     },
     // ── JavaScript ───────────────────────────────────────────────────────────
     "ghcr.io/helpers4/devcontainer/typescript-dev:1": {},
@@ -72,6 +73,21 @@
     }
   },
   "remoteUser": "node",
-  "initializeCommand": "mkdir -p ~/.claude",
+  // Runs on the HOST before the container exists — the only devcontainer lifecycle hook that
+  // does, which is why peon-ping's own README asks every consumer to paste this in rather
+  // than trying to do it from the Feature itself (not possible — see that README's "Why a
+  // Feature can't just fix this itself"):
+  //   1. Reads this HOST's peon-ping config (if any) and hands its active pack to the
+  //      container through a read-only Docker volume — see "Discovering your host's
+  //      peon-ping" in the peon-ping Feature's README. Never writes to the host itself.
+  //   2. Starts the audio relay for real if `peon` is installed here — matches `healHostRelay:
+  //      true` below, this org's explicit, versioned opt-in to letting this Feature touch the
+  //      host at all for the relay specifically (off by default otherwise). Not a printed
+  //      "run this yourself" message, an actual command that runs on every container start.
+  //      No --bind=<gateway-ip>: that IP is only knowable from inside a running container
+  //      (see peon-ping's README "Automating the relay"), which doesn't exist yet at this
+  //      point — accepting the relay's own default bind address instead of a per-container
+  //      narrower one.
+  "initializeCommand": "mkdir -p ~/.claude; p=$(python3 -c \"import json,os,re;c=os.path.expanduser('~/.claude/hooks/peon-ping/config.json');v=json.load(open(c)).get('default_pack','') if os.path.exists(c) else '';print(v if re.match('^[A-Za-z0-9_.-]+$',v) else '')\"); [ -n \"$p\" ] && docker run --rm -e PACK=\"$p\" -v helpers4-peon-ping-hostinfo-${devcontainerId}:/d busybox sh -c 'echo \"$PACK\" > /d/pack'; command -v peon >/dev/null 2>&1 && peon relay --daemon >/dev/null 2>&1; true",
   "onCreateCommand": "git config --local --unset core.hooksPath || true"
 }
