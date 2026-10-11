@@ -24,7 +24,7 @@
     },
     // ── Infrastructure ───────────────────────────────────────────────────────
     "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {},
-    "ghcr.io/helpers4/devcontainer/shell-history-per-project:1": {},
+    "ghcr.io/helpers4/devcontainer/shell-history:1": {},
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
       "moby": false
     },
