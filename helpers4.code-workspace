@@ -21,6 +21,10 @@
 			"path": "../typescript"
 		},
 		{
+			"name": "rust",
+			"path": "../rust"
+		},
+		{
 			"name": "website",
 			"path": "../website"
 		}
