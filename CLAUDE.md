@@ -5,8 +5,10 @@ Full org-wide rules (commit format, license headers, git restrictions) live in
 
 ## Workspace layout
 
-All repos are bind-mounted at `/workspaces/<name>` and open together in
-`helpers4.code-workspace`:
+`.dev` is bind-mounted from the host at `/workspaces/.dev`. Every other repo of the org is
+cloned by the [`org-workspace`](https://github.com/helpers4/devcontainer/tree/main/src/org-workspace)
+Feature into a named Docker volume (`/mnt/h4org-workspace/<name>`), linked at
+`/workspaces/<name>`, and listed in `helpers4.code-workspace`:
 
 | Path | Repo | Role |
 | ---- | ---- | ---- |
@@ -14,6 +16,7 @@ All repos are bind-mounted at `/workspaces/<name>` and open together in
 | `/workspaces/devcontainer` | `devcontainer` | DevContainer Features published to GHCR |
 | `/workspaces/typescript` | `typescript` | Tree-shakable TS utility library |
 | `/workspaces/action` | `action` | Reusable GitHub Actions |
+| `/workspaces/rust` | `rust` | General-purpose Rust helpers crate |
 | `/workspaces/website` | `website` | Astro + Starlight docs site (helpers4.dev) |
 | `/workspaces/.github` | `.github` | Org GitHub config (workflows, templates) |
 
@@ -23,9 +26,8 @@ All repos are bind-mounted at `/workspaces/<name>` and open together in
 pnpm run sync-copilot   # regenerate .vscode/copilot-commit.md in every sibling repo
 ```
 
-There's no `*:all` git/build/test orchestration here anymore — each repo lives
-on its own named devcontainer volume (see `.devcontainer/devcontainer.json`'s
-`mounts`), not a host bind mount, so there's no shared host-side script to run
+There's no `*:all` git/build/test orchestration here anymore — the sibling repos live
+in the `org-workspace` volume, not on the host, so there's no host-side script to run
 git/pnpm commands across every sibling from outside the container.
 
 ## Common gotchas
