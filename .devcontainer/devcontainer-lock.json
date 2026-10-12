@@ -113,14 +113,6 @@
         "ghcr.io/helpers4/devcontainer/helpers4-common:1"
       ]
     },
-    "ghcr.io/helpers4/devcontainer/peon-ping:1": {
-      "version": "1.3.2",
-      "resolved": "ghcr.io/helpers4/devcontainer/peon-ping@sha256:c68e6e60db88027be315a65cd3244f75e8cba7ff1cd683b0e68df41b3c19d5b0",
-      "integrity": "sha256:c68e6e60db88027be315a65cd3244f75e8cba7ff1cd683b0e68df41b3c19d5b0",
-      "dependsOn": [
-        "ghcr.io/helpers4/devcontainer/helpers4-common:1"
-      ]
-    },
     "ghcr.io/helpers4/devcontainer/pnpm-store:1": {
       "version": "1.3.1",
       "resolved": "ghcr.io/helpers4/devcontainer/pnpm-store@sha256:73c89408a1e66521c0f25c2b8ecbbff683e9706b3d4499a268747beaab2c2a19",
