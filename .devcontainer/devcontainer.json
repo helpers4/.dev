@@ -41,8 +41,9 @@
     // ── AI ───────────────────────────────────────────────────────────────────
     "ghcr.io/helpers4/devcontainer/copilot-dev:1": {},
     "ghcr.io/helpers4/devcontainer/claude-dev:1": {},
-    "ghcr.io/helpers4/devcontainer/mistral-dev:1": {},
+    //"ghcr.io/helpers4/devcontainer/mistral-dev:1": {},
     "ghcr.io/helpers4/devcontainer/cline-dev:1": {},
+    //"ghcr.io/helpers4/devcontainer/kimi-dev:1": {},
     // ── Rust ─────────────────────────────────────────────────────────────────
     "ghcr.io/devcontainers/features/rust:1": {},
     // ── JavaScript ───────────────────────────────────────────────────────────
