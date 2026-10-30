@@ -88,10 +88,10 @@
       "resolved": "ghcr.io/helpers4/devcontainer/helpers4-common@sha256:c7a3699fd60b5da8702d7d74ce48c58a84dfea4ee1f0f5370e8ce901b875aa8c",
       "integrity": "sha256:c7a3699fd60b5da8702d7d74ce48c58a84dfea4ee1f0f5370e8ce901b875aa8c"
     },
-    "ghcr.io/helpers4/devcontainer/mistral-dev:1": {
-      "version": "1.3.2",
-      "resolved": "ghcr.io/helpers4/devcontainer/mistral-dev@sha256:156a057e5440ef3f31ac539088186a661d07fe676116ccbd28cbe02f021470fc",
-      "integrity": "sha256:156a057e5440ef3f31ac539088186a661d07fe676116ccbd28cbe02f021470fc",
+    "ghcr.io/helpers4/devcontainer/kimi-dev:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/helpers4/devcontainer/kimi-dev@sha256:5e6d6a1fcc7332b08722bb6b4a56c83d3e94761ac3bae67c07f37de7359568a8",
+      "integrity": "sha256:5e6d6a1fcc7332b08722bb6b4a56c83d3e94761ac3bae67c07f37de7359568a8",
       "dependsOn": [
         "ghcr.io/helpers4/devcontainer/helpers4-common:1"
       ]
