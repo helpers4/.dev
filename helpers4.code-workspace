@@ -5,28 +5,44 @@
 			"path": "."
 		},
 		{
-			"name": "📦 .github",
+			"name": "🌍 .github",
 			"path": "../.github"
 		},
 		{
-			"name": "action",
+			"name": "🌍 action",
 			"path": "../action"
 		},
 		{
-			"name": "devcontainer",
+			"name": "🌍 devcontainer",
 			"path": "../devcontainer"
 		},
 		{
-			"name": "typescript",
+			"name": "🌍 typescript",
 			"path": "../typescript"
 		},
 		{
-			"name": "rust",
+			"name": "🌍 rust",
 			"path": "../rust"
 		},
 		{
-			"name": "website",
+			"name": "🌍 website",
 			"path": "../website"
+		},
+		{
+			"name": "🌍 action-release",
+			"path": "../action-release"
+		},
+		{
+			"name": "🔒 h4-dev-container-sandbox-",
+			"path": "../h4-dev-container-sandbox-"
+		},
+		{
+			"name": "🔒 test-action-release",
+			"path": "../test-action-release"
+		},
+		{
+			"name": "🌍 test-action-release-public",
+			"path": "../test-action-release-public"
 		}
 	],
 	"settings": {
