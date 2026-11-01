@@ -13,6 +13,10 @@
 			"path": "../action"
 		},
 		{
+			"name": "🌍 ai",
+			"path": "../ai"
+		},
+		{
 			"name": "🌍 devcontainer",
 			"path": "../devcontainer"
 		},
