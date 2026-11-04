@@ -9,16 +9,12 @@
   "remoteEnv": {
     "GH_TOKEN": "${localEnv:GH_TOKEN_FOR_HELPERS4}"
   },
-  // dotfiles-sync bind-mounts these host paths; Docker refuses to start the container
-  // if one is missing (e.g. a machine without ~/.kube). Runs on the host.
-  "initializeCommand": "mkdir -p ~/.ssh ~/.gnupg ~/.config/git ~/.aws ~/.kube ~/.docker && touch ~/.gitconfig ~/.npmrc ~/.yarnrc.yml ~/.aws/config ~/.kube/config ~/.docker/config.json",
   "features": {
     "ghcr.io/helpers4/devcontainer/org-workspace:1": {
       "autoDiscover": "public,private,internal,fork",
       "exclude": "helpers4.github.io"
     },
     // ── Infrastructure ───────────────────────────────────────────────────────
-    "ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {},
     "ghcr.io/helpers4/devcontainer/shell-history:1": {},
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
       "moby": false
