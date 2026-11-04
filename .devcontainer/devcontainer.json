@@ -33,7 +33,9 @@
     // ── AI ───────────────────────────────────────────────────────────────────
     "ghcr.io/helpers4/devcontainer/copilot-dev:1": {},
     "ghcr.io/helpers4/devcontainer/claude-dev:1": {
-      "installCli": true
+      "installCli": true,
+      "remoteControl": true,
+      "remoteControlAutoTrust": true
     },
     //"ghcr.io/helpers4/devcontainer/mistral-dev:1": {},
     "ghcr.io/helpers4/devcontainer/cline-dev:1": {},
