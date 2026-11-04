@@ -48,9 +48,15 @@ the exact comment syntax per language (TS/JS vs Bash).
 **Website docs** are auto-generated from sibling repos on release — never edit files under
 `/workspaces/website/src/content/docs/{typescript,devcontainer,action}/` by hand.
 
+**Git workflow**: branch, commit by subject (Conventional Commits), push only once it looks safe
+(human review of the diff recommended first, ask if unsure), open a PR — never merge, merging is
+always a human decision. See AGENTS.md's Git Workflow section for the full policy and how a narrow
+per-task carve-out (e.g. "push straight to `main` for this one fix") can be granted.
+
 ## AI persistence
 
 `~/.claude` is bind-mounted from a **per-devcontainer** volume and symlinked at
 every container start by `claude-dev` — isolated to this project, not shared
 with any other org's devcontainer. Memory, credentials, and settings survive
-rebuilds of this same devcontainer.
+rebuilds of this same devcontainer. Remote Control (`claude-rc status`) lets you start sessions
+in this devcontainer from claude.ai/code or the Claude mobile app.
