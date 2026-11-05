@@ -49,14 +49,6 @@
     },
     "ghcr.io/helpers4/devcontainer/vite-plus:1": {}
   },
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "streetsidesoftware.code-spell-checker",
-        "timonwong.shellcheck"
-      ]
-    }
-  },
   // Only `website` (Astro) runs a dev server; other repos have none to forward.
   "forwardPorts": [
     4321
