@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   run:
-    uses: helpers4/.github/.github/workflows/reusable-auto-assign.yml@68b080b42318deb7dd2c26d3a02f429cd117aa5a
+    uses: helpers4/.github/.github/workflows/reusable-auto-assign.yml@d99fec48e1ab97f964bd29c7a8ccf217f302b6d1
     with:
       assignees: baxyz
       numOfAssignee: 1
