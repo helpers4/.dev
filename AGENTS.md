@@ -68,6 +68,27 @@ The container is self-contained; no host toolchain installation is needed.
 - AI assistants: Copilot, Cline
 - `org-workspace`: clones the org repos into `/workspaces` and keeps the `.code-workspace` file up to date
 
+## Secrets (OpenBao)
+
+The org secrets come from OpenBao through `openbao-env` (`kv/orgs/helpers4`, plus the `kv/shared/*`
+paths of `devcontainer.json`) and are already in every process's environment; `openbao-env status`
+lists the key names. Never write a secret into a file of a repository.
+
+The container's own OpenBao token can only read. To write a secret (a new token, a key you just
+created), ask the user to run `lar bao-grant helpers4 [duration]` on fajro, then:
+
+```bash
+. /dev/shm/bao-grant/org.env   # BAO_ADDR + BAO_TOKEN: short-lived, kv/orgs/helpers4 read/write
+printf %s "$VALUE" | bao kv patch -mount=kv orgs/helpers4 NAME=-   # value on stdin, never an argument
+bao kv metadata patch -mount=kv -custom-metadata=expires.NAME=YYYY-MM-DD orgs/helpers4   # when it expires
+openbao-env refresh            # reload the environment
+```
+
+`--shared` adds `kv/shared/*`. `--prod` gives `/dev/shm/bao-grant/prod.env`, which can only patch
+existing secrets under `kv/prod/helpers4/` and cannot read them. The token exists only in a container
+on fajro; in Codespaces, ask the user to write the secret. Never print a token or a value, and tell
+the user when you are done so they can end it early (`lar bao-grant helpers4 --revoke`).
+
 ## Rules
 
 - Treat this repository as configuration/documentation only — no product runtime code.
